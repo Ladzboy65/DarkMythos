@@ -16,6 +16,7 @@ Authors:
 
 - Viveleroi (Creator, Lead Developer)
 - jasonbbb7111 (Contributor)
+- yllom001 (Contributor)
 
 ## Gods
 

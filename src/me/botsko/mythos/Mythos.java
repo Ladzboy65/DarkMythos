@@ -12,8 +12,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Mythos extends JavaPlugin {
 
-	Logger log = Logger.getLogger("Minecraft");
-	FileConfiguration config;
+	protected Logger log = Logger.getLogger("Minecraft");
+	protected FileConfiguration config;
 	
 	
     /**

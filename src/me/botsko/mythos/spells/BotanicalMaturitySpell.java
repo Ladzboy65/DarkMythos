@@ -111,6 +111,13 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 			return true;
 
 		}
+		if(currBlock.getType() == Material.CROPS || currBlock.getType() == Material.MELON_STEM || currBlock.getType() == Material.PUMPKIN_STEM){
+			// Only if not already grown
+			if(currBlock.getData() < 7){
+				currBlock.setData((byte) 7);
+				MythosUtil.subtractFromHand( player );
+			}
+		}
 		return false;
 	}
 }
