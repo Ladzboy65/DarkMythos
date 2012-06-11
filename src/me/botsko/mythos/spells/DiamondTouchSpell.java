@@ -4,7 +4,6 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -84,7 +83,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	@Override
-	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
+	public boolean useSpellPlayerInteract(PlayerInteractEvent event){
 		
 		Block currBlock = event.getClickedBlock();
 		currBlock.setType(Material.DIAMOND_BLOCK);

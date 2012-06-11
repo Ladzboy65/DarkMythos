@@ -27,6 +27,13 @@ public interface Spell {
 	 * 
 	 * @return
 	 */
+	public double getCurseAmplifier();
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getAwardMessage();
 	
 	

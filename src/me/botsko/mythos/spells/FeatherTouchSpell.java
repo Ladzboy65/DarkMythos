@@ -35,6 +35,15 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	public double getCurseAmplifier(){
+		return 0.20;
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
 	@Override
 	public String getAwardMessage(){
 		return "You discovered a magical book: Hephaestus' Spell of Feather Touch";
@@ -83,13 +92,31 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	@Override
-	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
+	public boolean useSpellPlayerInteract(PlayerInteractEvent event){
+		
 		Block currBlock = event.getClickedBlock();
-		ItemStack copy = new ItemStack( currBlock.getType(), 1 );
+		
+		// Set default quantity
+		int quant = 1;
+		
+		// Check for a spell modifier
+		SpellModifier mod = getSpellModifier();
+		if(mod != null){
+			if(mod.getMaterial() == Material.DIAMOND_BLOCK){
+				quant = mod.getQuant( 3 );
+			}
+		}
+		
+		// Copy the block at desired quantity, give to player
+		ItemStack copy = new ItemStack( currBlock.getType(), quant );
 		copy.setDurability(currBlock.getData());
 		player.getInventory().addItem( copy );
 		player.updateInventory();
+		
+		// Remove spell book
 		MythosUtil.subtractFromHand( player );
+		
 		return true;
+		
 	}
 }

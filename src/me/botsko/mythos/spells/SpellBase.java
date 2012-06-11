@@ -2,11 +2,13 @@ package me.botsko.mythos.spells;
 
 import me.botsko.mythos.MythosWeighted;
 
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class SpellBase implements MythosWeighted {
 	
@@ -15,6 +17,20 @@ public class SpellBase implements MythosWeighted {
 	 * Block the action happened to
 	 */
 	protected Block block;
+	
+	/**
+	 * 
+	 */
+	protected Player player;
+	
+	
+	/**
+	 * 
+	 * @param player
+	 */
+	public void setPlayer(Player player){
+		this.player = player;
+	}
 
 
 	/**
@@ -51,6 +67,15 @@ public class SpellBase implements MythosWeighted {
 	 * 
 	 * @return
 	 */
+	public double getCurseAmplifier(){
+		return 0;
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getAwardMessage(){
 		return "";
 	}
@@ -79,7 +104,7 @@ public class SpellBase implements MythosWeighted {
 	 * @param event
 	 * @return
 	 */
-	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
+	public boolean useSpellPlayerInteract(PlayerInteractEvent event){
 		return false;
 	}
 	
@@ -89,7 +114,28 @@ public class SpellBase implements MythosWeighted {
 	 * @param event
 	 * @return
 	 */
-	public boolean useSpellPlayerEntityInteract(PlayerInteractEntityEvent event, Player player){
+	public boolean useSpellPlayerEntityInteract(PlayerInteractEntityEvent event){
 		return false;
+	}
+	
+	
+	/**
+	 * 
+	 * @param player
+	 * @return
+	 */
+	public SpellModifier getSpellModifier(){
+		
+		for (ItemStack stack : player.getInventory().getContents()) {
+			if (stack != null) {
+				
+				
+				if(stack.getType() == Material.DIAMOND_BLOCK){
+					System.out.print("Diamond block found");
+					return new SpellModifier( Material.DIAMOND_BLOCK, stack.getAmount() );
+				}
+			}
+		}
+		return null;
 	}
 }

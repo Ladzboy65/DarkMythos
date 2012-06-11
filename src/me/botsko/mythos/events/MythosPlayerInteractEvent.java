@@ -46,12 +46,14 @@ public class MythosPlayerInteractEvent implements Listener {
 				SpellBase award = sc.chooseSpell( player.getItemInHand().getDurability() );
 				if(award != null){
 					
+					award.setPlayer( player );
+					
 					// If the item is cursed, apply the curse and skip using it
-					CurseBase curse = cc.chooseRandomCurse();
+					CurseBase curse = cc.chooseRandomCurse( award.getCurseAmplifier() );
 					if(curse == null){
 					
 						// Get the block break award
-						if( award.useSpellPlayerInteract(event, player) ){
+						if( award.useSpellPlayerInteract(event) ){
 						
 							// Message the player
 							player.sendMessage( plugin.playerMsg( award.getSpellUseMessage() ));

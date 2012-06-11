@@ -4,7 +4,6 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -100,7 +99,7 @@ public class ViveTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	@Override
-	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
+	public boolean useSpellPlayerInteract(PlayerInteractEvent event){
 	Location l = player.getLocation();
 	int x = l.getBlockX();
 	int y = l.getBlockY();

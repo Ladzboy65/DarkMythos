@@ -4,7 +4,6 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
@@ -83,7 +82,7 @@ public class CreatureThiefSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	@Override
-	public boolean useSpellPlayerEntityInteract(PlayerInteractEntityEvent event, Player player){
+	public boolean useSpellPlayerEntityInteract(PlayerInteractEntityEvent event){
 		
 		Entity e = event.getRightClicked();
 		
