@@ -1,5 +1,7 @@
 package me.botsko.mythos.curses;
 
+import me.botsko.mythos.utilities.MythosUtil;
+
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
@@ -39,6 +41,6 @@ public class HealthDamageCurse extends CurseBase {
 	@Override
 	public void applyCurse(Player player){
 		player.setHealth( player.getHealth() - 15 );
-		subtractFromHand( player );
+		MythosUtil.subtractFromHand( player );
 	}
 }

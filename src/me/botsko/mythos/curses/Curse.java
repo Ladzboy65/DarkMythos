@@ -1,5 +1,7 @@
 package me.botsko.mythos.curses;
 
+import me.botsko.mythos.spells.SpellModifier;
+
 public interface Curse {
 
 	/**
@@ -14,6 +16,12 @@ public interface Curse {
 	 * @return
 	 */
 	public String getMessage();
+	
+	
+	/**
+	 * 
+	 */
+	public SpellModifier getSpellModifier();
 	
 	
 	/**

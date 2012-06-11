@@ -1,5 +1,7 @@
 package me.botsko.mythos.curses;
 
+import me.botsko.mythos.utilities.MythosUtil;
+
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
@@ -40,6 +42,6 @@ public class LoseXPCurse extends CurseBase {
 	public void applyCurse(Player player){
 		player.setLevel(0);
 		player.setTotalExperience(0);
-		subtractFromHand( player );
+		MythosUtil.subtractFromHand( player );
 	}
 }

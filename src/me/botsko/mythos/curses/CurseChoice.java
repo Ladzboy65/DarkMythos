@@ -70,7 +70,9 @@ public class CurseChoice {
 
 		// Choose
 		if(WeightedRandom.getRandomNumber( (int) curse_chance_range ) == 1){
-			return (CurseBase) WeightedRandom.chooseOnWeight(available_curses);
+			CurseBase c = (CurseBase) WeightedRandom.chooseOnWeight(available_curses);
+			c.playerHasSpellModifier( spell.getSpellModifier() );
+			return c;
 		}
 		return null;
 	}

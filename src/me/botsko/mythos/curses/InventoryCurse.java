@@ -61,6 +61,6 @@ public class InventoryCurse extends CurseBase {
 				MythosUtil.removeItem(player, i);
 			}
         }
-        subtractFromHand( player );
+        MythosUtil.subtractFromHand( player );
 	}
 }

@@ -1,5 +1,7 @@
 package me.botsko.mythos.curses;
 
+import me.botsko.mythos.utilities.MythosUtil;
+
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
@@ -42,6 +44,6 @@ public class PoisonPlayerCurse extends CurseBase {
 	public void applyCurse(Player player){
 		player.addPotionEffect( new PotionEffect(PotionEffectType.POISON, 200, 1) );
 		player.addPotionEffect( new PotionEffect(PotionEffectType.WEAKNESS, 200, 1) );
-		subtractFromHand( player );
+		MythosUtil.subtractFromHand( player );
 	}
 }

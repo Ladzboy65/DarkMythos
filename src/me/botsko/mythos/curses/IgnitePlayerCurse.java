@@ -1,5 +1,7 @@
 package me.botsko.mythos.curses;
 
+import me.botsko.mythos.utilities.MythosUtil;
+
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
@@ -39,7 +41,7 @@ public class IgnitePlayerCurse extends CurseBase {
 	@Override
 	public void applyCurse(Player player){
         player.setFireTicks(10000);
-		subtractFromHand( player );
+        MythosUtil.subtractFromHand( player );
 		player.setHealth(0);
 	}
 }
