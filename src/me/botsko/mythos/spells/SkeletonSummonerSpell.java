@@ -3,10 +3,8 @@ package me.botsko.mythos.spells;
 import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
-import org.bukkit.World;
-import org.bukkit.block.Block;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Skeleton;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -21,12 +19,14 @@ public class SkeletonSummonerSpell extends SpellBase implements Spell {
 	public short getSpellId(){
 		return 10;
 	}
+	
+	
 	/**
 	 * Returns the weighting of the award
 	 */
 	public int getWeight(){
 		return 4;
-}
+	}
 	
 	
 	/**
@@ -59,17 +59,18 @@ public class SkeletonSummonerSpell extends SpellBase implements Spell {
 			ItemStack i = new ItemStack(Material.BOOK, 1);
 			i.setDurability( getSpellId() );
 
-		// Drop the item
-					block.getWorld().dropItemNaturally(block.getLocation(), i);
-					
-					// Boom!
-					MythosUtil.awardThunder( block );
-					
-					return true;
+			// Drop the item
+			block.getWorld().dropItemNaturally(block.getLocation(), i);
+			
+			// Boom!
+			MythosUtil.awardThunder( block );
+			
+			return true;
 					
 		}
 		return false;
 	}
+	
 	
 	/**
 	 * 
@@ -77,11 +78,9 @@ public class SkeletonSummonerSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
-	Block currBlock = event.getClickedBlock();
-	World world = player.getWorld();
-	world.spawn(currBlock.getLocation(), Skeleton.class);
-	MythosUtil.subtractFromHand( player );
-	return true;
-}
+		player.getWorld().spawnCreature(player.getLocation(), EntityType.SKELETON);
+		MythosUtil.subtractFromHand( player );
+		return true;
 	}
+}
 
