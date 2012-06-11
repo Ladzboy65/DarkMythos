@@ -1,10 +1,16 @@
 package me.botsko.mythos.spells;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import me.botsko.mythos.MythosWeighted;
+import me.botsko.mythos.curses.ExplosionCurse;
+import me.botsko.mythos.curses.FallCurse;
+import me.botsko.mythos.curses.KillPlayerCurse;
 import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -36,7 +42,30 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public double getCurseAmplifier(){
-		return 0.20;
+		if(modifier != null){
+			if(modifier.getMaterial() == Material.DIAMOND_BLOCK){
+				return 0.20;
+			}
+		}
+		return 0;
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public List<MythosWeighted> getCurseChoices(){
+		// Check for a spell modifier
+		if(modifier != null){
+			if(modifier.getMaterial() == Material.DIAMOND_BLOCK){
+				List<MythosWeighted> curses = new ArrayList<MythosWeighted>();
+				curses.add(new KillPlayerCurse());
+				curses.add(new ExplosionCurse());
+				return curses;
+			}
+		}
+		return null;
 	}
 	
 	
@@ -100,10 +129,9 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 		int quant = 1;
 		
 		// Check for a spell modifier
-		SpellModifier mod = getSpellModifier();
-		if(mod != null){
-			if(mod.getMaterial() == Material.DIAMOND_BLOCK){
-				quant = mod.getQuant( 3 );
+		if(modifier != null){
+			if(modifier.getMaterial() == Material.DIAMOND_BLOCK){
+				quant = modifier.getQuant( 3 );
 			}
 		}
 		

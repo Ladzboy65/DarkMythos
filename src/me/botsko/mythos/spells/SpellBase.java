@@ -1,5 +1,7 @@
 package me.botsko.mythos.spells;
 
+import java.util.List;
+
 import me.botsko.mythos.MythosWeighted;
 
 import org.bukkit.Material;
@@ -23,6 +25,11 @@ public class SpellBase implements MythosWeighted {
 	 */
 	protected Player player;
 	
+	/**
+	 * 
+	 */
+	protected SpellModifier modifier;
+	
 	
 	/**
 	 * 
@@ -30,6 +37,7 @@ public class SpellBase implements MythosWeighted {
 	 */
 	public void setPlayer(Player player){
 		this.player = player;
+		this.modifier = getSpellModifier();
 	}
 
 
@@ -69,6 +77,15 @@ public class SpellBase implements MythosWeighted {
 	 */
 	public double getCurseAmplifier(){
 		return 0;
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public List<MythosWeighted> getCurseChoices(){
+		return null;
 	}
 	
 	
@@ -129,9 +146,7 @@ public class SpellBase implements MythosWeighted {
 		for (ItemStack stack : player.getInventory().getContents()) {
 			if (stack != null) {
 				
-				
 				if(stack.getType() == Material.DIAMOND_BLOCK){
-					System.out.print("Diamond block found");
 					return new SpellModifier( Material.DIAMOND_BLOCK, stack.getAmount() );
 				}
 			}

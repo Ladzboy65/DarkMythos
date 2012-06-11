@@ -1,5 +1,9 @@
 package me.botsko.mythos.spells;
 
+import java.util.List;
+
+import me.botsko.mythos.MythosWeighted;
+
 public interface Spell {
 
 	/**
@@ -28,6 +32,13 @@ public interface Spell {
 	 * @return
 	 */
 	public double getCurseAmplifier();
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public List<MythosWeighted> getCurseChoices();
 	
 	
 	/**
