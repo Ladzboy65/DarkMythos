@@ -8,11 +8,20 @@ public interface Spell {
 	 */
 	public short getSpellId();
 	
+	
 	/**
 	 * 
 	 * @return
 	 */
 	public int getWeight();
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+//	public int getLevel();
+	
 	
 	/**
 	 * 

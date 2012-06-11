@@ -20,6 +20,30 @@ public class WeightedRandom {
 	
 	/**
 	 * 
+	 * @param data
+	 * @param weight
+	 * @return
+	 */
+	public static int getWeightedRandomNumber( int[] data, int[] weight ){
+		Random randomGenerator = new Random();
+		int totalWeight = sum(weight);
+		int n=randomGenerator.nextInt(totalWeight);
+		int runningTotal=0;
+		for (int i=0;i<weight.length;i++){
+		  runningTotal+=weight[i];
+		  if (n<runningTotal) return data[i];
+		}
+		return -1;
+	}
+	static int sum(int[] a){
+		int s=0;
+		for (int i=0;i<a.length;i++) s+=a[i];
+		return s;
+	}
+
+	
+	/**
+	 * 
 	 * @param items
 	 * @return
 	 */
@@ -30,21 +54,15 @@ public class WeightedRandom {
         for (MythosWeighted item : items){
             completeWeight += item.getWeight();
         }
-//        System.out.println("Complete Weight Is: " + completeWeight);
-        
+
         // Choose a random item
         double rand = Math.random();
         double r = rand * completeWeight;
-        
-//        System.out.println("rand Is: " + rand);
-//        System.out.println("r Is: " + r);
-        
+
         double countWeight = 0.0;
         for (MythosWeighted item : items) {
-//        	System.out.println("Checking Spell: " + item.getClass().toString() + " CountWeight: " + countWeight);
             countWeight += item.getWeight();
             if (countWeight >= r){
-//            	System.out.println("CountWeight Matched");
                 return item;
             }
         }

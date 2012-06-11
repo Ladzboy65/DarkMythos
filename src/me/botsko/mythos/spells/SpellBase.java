@@ -36,6 +36,17 @@ public class SpellBase implements MythosWeighted {
 	}
 	
 	
+//	/**
+//	 * 
+//	 * @return
+//	 */
+//	public int getLevel(){
+//		int[] nums = {1,2,3,4,5};
+//		int[] weights = {100,100,125,125,160};
+//		return WeightedRandom.getWeightedRandomNumber( nums, weights );
+//	}
+	
+	
 	/**
 	 * 
 	 * @return
