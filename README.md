@@ -40,6 +40,7 @@ If you do find a cursed spell book, pray that it's a minor curse - like a few he
 - Smite - You're smited.
 - Ignition - You're set on fire.
 - Inventory Curse - You lose a random item from your inventory besides the spell book.
+- Zombie Appearance - Zombies appear before you.
 
 ## Credits
 
