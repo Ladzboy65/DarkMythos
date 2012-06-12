@@ -126,10 +126,8 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 		int quant = 1;
 		
 		// Check for a spell modifier
-		if(modifier != null){
-			if(modifier.getMaterial() == Material.DIAMOND_BLOCK){
-				quant = modifier.getQuant( 5 );
-			}
+		if(playerHasModifier( Material.DIAMOND_BLOCK, 1 )){
+			quant = modifier.getQuant( 5 );
 		}
 		
 		// Copy the block at desired quantity, give to player

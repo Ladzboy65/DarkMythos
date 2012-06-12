@@ -40,6 +40,7 @@ public class SpellChoice {
 //		spells.add(new ViveTouchSpell());
 		spells.add(new SkeletonSummonerSpell());
 		spells.add(new TreeFellerSpell());
+		spells.add(new CreatureCookerSpell());
 		
 	}
 	

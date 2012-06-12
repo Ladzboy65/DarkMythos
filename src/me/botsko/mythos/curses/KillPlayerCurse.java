@@ -2,18 +2,10 @@ package me.botsko.mythos.curses;
 
 import me.botsko.mythos.utilities.MythosUtil;
 
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public class KillPlayerCurse extends CurseBase {
-	
-	
-	/**
-	 * Block the action happened to
-	 */
-	protected Block block;
-
 	
 	/**
 	 * 

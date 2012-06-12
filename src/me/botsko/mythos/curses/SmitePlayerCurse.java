@@ -1,16 +1,9 @@
 package me.botsko.mythos.curses;
 
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
 public class SmitePlayerCurse extends CurseBase {
 	
-	
-	/**
-	 * Block the action happened to
-	 */
-	protected Block block;
-
 	
 	/**
 	 * 

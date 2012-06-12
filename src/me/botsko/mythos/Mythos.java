@@ -2,9 +2,9 @@ package me.botsko.mythos;
 
 import java.util.logging.Logger;
 
-import me.botsko.mythos.events.MythosBlockBreakEvent;
-import me.botsko.mythos.events.MythosPlayerInteractEntityEvent;
-import me.botsko.mythos.events.MythosPlayerInteractEvent;
+import me.botsko.mythos.listeners.MythosBlockBreakEvent;
+import me.botsko.mythos.listeners.MythosPlayerInteractEntityEvent;
+import me.botsko.mythos.listeners.MythosPlayerInteractEvent;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;

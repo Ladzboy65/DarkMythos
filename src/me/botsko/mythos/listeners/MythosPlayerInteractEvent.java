@@ -1,4 +1,4 @@
-package me.botsko.mythos.events;
+package me.botsko.mythos.listeners;
 
 import me.botsko.mythos.Mythos;
 import me.botsko.mythos.curses.CurseBase;
@@ -11,9 +11,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
 
-public class MythosPlayerInteractEntityEvent implements Listener {
+public class MythosPlayerInteractEvent implements Listener {
 	
 	private Mythos plugin;
 	private SpellChoice sc;
@@ -23,7 +24,7 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 	 * 
 	 * @param plugin
 	 */
-	public MythosPlayerInteractEntityEvent( Mythos plugin ){
+	public MythosPlayerInteractEvent( Mythos plugin ){
 		this.plugin = plugin;
 		this.sc = new SpellChoice( plugin );
 		this.cc = new CurseChoice( plugin );
@@ -31,12 +32,12 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 	
 	
 	@EventHandler(priority = EventPriority.NORMAL)
-    public void onPlayerInteractEntityEvent(final PlayerInteractEntityEvent event){
+    public void onPlayerInteractEvent(final PlayerInteractEvent event){
 		
 		Player player = event.getPlayer();
 		
 		// Ensure they're right-clicking
-		if (event.getRightClicked() != null) {
+		if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
 			
 			// Ensure they're using a book
 			if(player.getItemInHand().getType() == Material.BOOK){
@@ -52,7 +53,7 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 					if(curse == null){
 					
 						// Get the block break award
-						if( spell.useSpellPlayerEntityInteract(event) ){
+						if( spell.useSpellPlayerInteract(event) ){
 						
 							// Message the player
 							player.sendMessage( plugin.playerMsg( spell.getSpellUseMessage() ));

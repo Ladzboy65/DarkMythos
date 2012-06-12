@@ -4,19 +4,12 @@ import java.util.Random;
 
 import me.botsko.mythos.utilities.MythosUtil;
 
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public class InventoryCurse extends CurseBase {
 	
 	static Random r = new Random();
-	
-	/**
-	 * Block the action happened to
-	 */
-	protected Block block;
-
 	
 	/**
 	 * 
