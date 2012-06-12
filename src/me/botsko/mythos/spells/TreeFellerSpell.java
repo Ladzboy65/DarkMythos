@@ -174,7 +174,6 @@ public class TreeFellerSpell extends SpellBase {
             }
         }
     }
-
     
     
 	/**

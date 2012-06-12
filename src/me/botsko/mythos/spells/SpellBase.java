@@ -159,4 +159,25 @@ public class SpellBase implements MythosWeighted {
 		}
 		return null;
 	}
+	
+	
+	/**
+	 * 
+	 * @param material
+	 * @param min_quant
+	 * @return
+	 */
+	public boolean playerHasModifier( Material material, int min_quant ){
+		
+		if(modifier != null){
+			if(modifier.equals( material )){
+				if(min_quant > 0){
+					return (modifier.getQuant( min_quant ) <= min_quant);
+				} else {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }
