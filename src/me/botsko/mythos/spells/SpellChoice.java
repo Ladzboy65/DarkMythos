@@ -38,6 +38,8 @@ public class SpellChoice {
 		spells.add(new CreatureBanisherSpell());
 //		spells.add(new ViveTouchSpell());
 		spells.add(new SkeletonSummonerSpell());
+		spells.add(new TreeFellerSpell());
+		
 	}
 	
 	

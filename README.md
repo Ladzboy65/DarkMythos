@@ -8,16 +8,6 @@ Pick up your spell book quickly before someone else takes it, and store it for l
 
 If you do find a cursed spell book, pray that it's a minor curse - like a few health points lost or poison. For the truly unlucky, your spell book may contain the ultimate curse - a brutal death. 
 
-## Credits
-
-This plugin was custom designed for the amazing *s.dhmc.us* Minecraft server.
-
-Authors:
-
-- Viveleroi (Creator, Lead Developer)
-- jasonbbb711 (Contributor)
-- yllom001 (Contributor)
-
 ## Gods
 
 - Demeter - God of Horticulture/Botany
@@ -29,6 +19,7 @@ Authors:
 ## Spells
 
 - Botanical Maturity - Use to auto-grow saplings, wheat, melon, or pumpkin
+- Tree Feller - Breaks a tree/leaves with one hit.
 - Iron Touch - Use to turn any block into an iron block
 - Gold Touch - Use to turn any block into an gold block
 - Diamond Touch - Use to turn any block into a diamond block
@@ -49,4 +40,18 @@ Authors:
 - Smite - You're smited.
 - Ignition - You're set on fire.
 - Inventory Curse - You lose a random item from your inventory besides the spell book.
+
+## Credits
+
+This plugin was custom designed for the amazing *s.dhmc.us* Minecraft server.
+
+Authors:
+
+- Viveleroi (Creator, Lead Developer)
+- jasonbbb711 (Contributor)
+- yllom001 (Contributor)
+
+Tree Feller logic borrowed and modified from McMMO under the GNU License, author nossr50.
+
+
 
