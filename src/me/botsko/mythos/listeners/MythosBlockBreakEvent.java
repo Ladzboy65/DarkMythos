@@ -1,4 +1,4 @@
-package me.botsko.mythos.events;
+package me.botsko.mythos.listeners;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

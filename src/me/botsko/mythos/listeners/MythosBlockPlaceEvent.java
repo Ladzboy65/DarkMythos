@@ -1,4 +1,4 @@
-package me.botsko.mythos.events;
+package me.botsko.mythos.listeners;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
