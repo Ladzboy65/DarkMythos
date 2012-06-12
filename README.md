@@ -27,7 +27,11 @@ If you do find a cursed spell book, pray that it's a minor curse - like a few he
 - Creature Thief - Steals a creature. Turns a living mob into a mob egg in your inventory.
 - Pick Summoner - Gives you a pickaxe of iron/gold/diamond when used on ores of those types.
 - Creature Banisher - Erases a creature from existence.
+<<<<<<< HEAD
 - Creature Cooker - Provides already-cooked meat when used on animals.
+=======
+- Armor Enchanter - Rare spell that enchants your armor.
+>>>>>>> a7cdffd12fdf32da14a41f7e1c4c7680ffd6848b
 
 
 ## Curses
@@ -41,7 +45,11 @@ If you do find a cursed spell book, pray that it's a minor curse - like a few he
 - Smite - You're smited.
 - Ignition - You're set on fire.
 - Inventory Curse - You lose a random item from your inventory besides the spell book.
+<<<<<<< HEAD
 - Zombie Appearance - Zombies appear before you.
+=======
+- Armor Destroyer - Destroys some, if not all, of your armor
+>>>>>>> a7cdffd12fdf32da14a41f7e1c4c7680ffd6848b
 
 
 ## Credits
