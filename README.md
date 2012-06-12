@@ -15,7 +15,7 @@ This plugin was custom designed for the amazing *s.dhmc.us* Minecraft server.
 Authors:
 
 - Viveleroi (Creator, Lead Developer)
-- jasonbbb7111 (Contributor)
+- jasonbbb711 (Contributor)
 - yllom001 (Contributor)
 
 ## Gods
@@ -25,4 +25,28 @@ Authors:
 - Hephaestus - fire, metalworking, stonemasonry, sculpture and volcanism
 - Ares - God of war, bloodlust, violence
 
+
+## Spells
+
+- Botanical Maturity - Use to auto-grow saplings, wheat, melon, or pumpkin
+- Iron Touch - Use to turn any block into an iron block
+- Gold Touch - Use to turn any block into an gold block
+- Diamond Touch - Use to turn any block into a diamond block
+- Feather Touch - Use to copy any block into your inventory. Every diamond block in your inventory (up to five) multiplies the number of copies made. For example, with five diamond blocks in your inventory, you may make five copies of any block. However, your chances of a fatal curse increase to 50%.
+- Creature Thief - Steals a creature. Turns a living mob into a mob egg in your inventory.
+- Pick Summoner - Gives you an iron pick when used on iron ore.
+- Creature Banisher - Erases a creature from existence.
+
+
+## Curses
+
+- Health Damage - Damages your health.
+- Poison - Poisons you.
+- Kill - Kills you. If happens when you used a diamond block for a spell modifier, you lose your inventory.
+- Lose XP - You lose all XP.
+- Explosion - You die from an explosion
+- Falling - You're rocketed to the top of the map and may die from the fall.
+- Smite - You're smited.
+- Ignition - You're set on fire.
+- Inventory Curse - You lose a random item from your inventory besides the spell book.
 

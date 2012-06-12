@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.botsko.mythos.MythosWeighted;
-import me.botsko.mythos.curses.ExplosionCurse;
 import me.botsko.mythos.curses.KillPlayerCurse;
 import me.botsko.mythos.utilities.MythosUtil;
 
@@ -32,7 +31,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public int getWeight(){
-		return 50;
+		return 5;
 	}
 	
 	
@@ -60,7 +59,6 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 			if(modifier.getMaterial() == Material.DIAMOND_BLOCK){
 				List<MythosWeighted> curses = new ArrayList<MythosWeighted>();
 				curses.add(new KillPlayerCurse());
-//				curses.add(new ExplosionCurse());
 				return curses;
 			}
 		}
@@ -130,7 +128,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 		// Check for a spell modifier
 		if(modifier != null){
 			if(modifier.getMaterial() == Material.DIAMOND_BLOCK){
-				quant = modifier.getQuant( 3 );
+				quant = modifier.getQuant( 5 );
 			}
 		}
 		

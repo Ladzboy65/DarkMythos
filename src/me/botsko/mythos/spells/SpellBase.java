@@ -147,7 +147,13 @@ public class SpellBase implements MythosWeighted {
 			if (stack != null) {
 				
 				if(stack.getType() == Material.DIAMOND_BLOCK){
-					return new SpellModifier( Material.DIAMOND_BLOCK, stack.getAmount() );
+					return new SpellModifier( stack.getType(), stack.getAmount() );
+				}
+				if(stack.getType() == Material.GOLD_BLOCK){
+					return new SpellModifier( stack.getType(), stack.getAmount() );
+				}
+				if(stack.getType() == Material.IRON_BLOCK){
+					return new SpellModifier( stack.getType(), stack.getAmount() );
 				}
 			}
 		}
