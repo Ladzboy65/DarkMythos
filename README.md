@@ -27,6 +27,7 @@ If you do find a cursed spell book, pray that it's a minor curse - like a few he
 - Creature Thief - Steals a creature. Turns a living mob into a mob egg in your inventory.
 - Pick Summoner - Gives you an iron pick when used on iron ore.
 - Creature Banisher - Erases a creature from existence.
+- Armor Enchanter - Rare spell that enchants your armor.
 
 
 ## Curses
@@ -40,6 +41,8 @@ If you do find a cursed spell book, pray that it's a minor curse - like a few he
 - Smite - You're smited.
 - Ignition - You're set on fire.
 - Inventory Curse - You lose a random item from your inventory besides the spell book.
+- Armor Destroyer - Destroys some, if not all, of your armor
+
 
 ## Credits
 
