@@ -9,7 +9,6 @@ import org.bukkit.TreeType;
 import org.bukkit.block.Block;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class BotanicalMaturitySpell extends SpellBase implements Spell {
 
@@ -72,22 +71,10 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
-		
 		block = event.getBlock();
 		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			
-			// Set item
-			ItemStack i = new ItemStack(Material.BOOK, 1);
-			i.setDurability( getSpellId() );
-			
-			// Drop the item
-			block.getWorld().dropItemNaturally(block.getLocation(), i);
-			
-			// Boom!
-			MythosUtil.awardThunder( block );
-
+			dropSpellBook();
 			return true;
-			
 		}
 		return false;
 	}
@@ -161,18 +148,30 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * @param currBlock
 	 * @param toBeFelled
 	 */
-    private static void findNeighborBlocks( Block currBlock, ArrayList<Block> matchingBlocks ) {
-    	
+    private void findNeighborBlocks( Block currBlock, ArrayList<Block> matchingBlocks ) {
+
         Material type = currBlock.getType();
         if(type == Material.CROPS || type == Material.MELON_STEM || type == Material.PUMPKIN_STEM){
         	
         	matchingBlocks.add(currBlock);
+        	
+        	Block xPositive = currBlock.getRelative(1, 0, 0);
+            Block xNegative = currBlock.getRelative(-1, 0, 0);
+            Block zPositive = currBlock.getRelative(0, 0, 1);
+            Block zNegative = currBlock.getRelative(0, 0, -1);
 
-	        findNeighborBlocks( currBlock.getRelative(1, 0, 0), matchingBlocks ); // xPositive
-	        findNeighborBlocks( currBlock.getRelative(-1, 0, 0), matchingBlocks ); // xNegative
-	        findNeighborBlocks( currBlock.getRelative(0, 0, 1), matchingBlocks ); // zPositive
-	        findNeighborBlocks( currBlock.getRelative(0, 0, -1), matchingBlocks ); // zNegative
-
+        	if ( !matchingBlocks.contains(xPositive) ) {
+        		findNeighborBlocks( xPositive, matchingBlocks );
+        	}
+        	if ( !matchingBlocks.contains(xNegative) ) {
+        		findNeighborBlocks( xNegative, matchingBlocks );
+        	}
+        	if ( !matchingBlocks.contains(zPositive) ) {
+        		findNeighborBlocks( zPositive, matchingBlocks );
+        	}
+        	if ( !matchingBlocks.contains(zNegative) ) {
+        		findNeighborBlocks( zNegative, matchingBlocks );
+        	}
         }
     }
     
@@ -184,7 +183,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * @param player The player using the ability
 	 * @param PP The PlayerProfile of the player
 	 */
-    private static void growCrops( ArrayList<Block> matchingBlocks ) {
+    private void growCrops( ArrayList<Block> matchingBlocks ) {
 
         for (Block currBlock : matchingBlocks) {
         	Material type = currBlock.getType();

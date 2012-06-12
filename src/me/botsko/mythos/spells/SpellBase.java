@@ -3,6 +3,7 @@ package me.botsko.mythos.spells;
 import java.util.List;
 
 import me.botsko.mythos.MythosWeighted;
+import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -118,6 +119,24 @@ public class SpellBase implements MythosWeighted {
 	
 	/**
 	 * 
+	 */
+	protected void dropSpellBook(){
+		
+		// Set item
+		ItemStack i = new ItemStack(Material.BOOK, 1);
+		i.setDurability( getSpellId() );
+		
+		// Drop the item
+		block.getWorld().dropItemNaturally(block.getLocation(), i);
+		
+		// Boom!
+		MythosUtil.awardThunder( block );
+		
+	}
+	
+	
+	/**
+	 * 
 	 * @param event
 	 * @return
 	 */
@@ -170,7 +189,7 @@ public class SpellBase implements MythosWeighted {
 	public boolean playerHasModifier( Material material, int min_quant ){
 		
 		if(modifier != null){
-			if(modifier.equals( material )){
+			if(modifier.getMaterial().equals( material )){
 				if(min_quant > 0){
 					return (modifier.getQuant( min_quant ) <= min_quant);
 				} else {
