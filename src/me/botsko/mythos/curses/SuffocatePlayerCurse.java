@@ -12,7 +12,7 @@ public class SuffocatePlayerCurse extends CurseBase {
 	 */
 	@Override
 	public int getWeight(){
-		return 1;
+		return 70;
 	}
 	
 	
