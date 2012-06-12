@@ -37,6 +37,8 @@ public class CurseChoice {
 		curses.add(new IgnitePlayerCurse());
 		curses.add(new InventoryCurse());
 		curses.add(new ZombieAppearanceCurse());
+		curses.add(new ArmorDestroyerCurse());
+		
 	}
 	
 	

@@ -28,6 +28,7 @@ public class SpellChoice {
 		
 		this.plugin = plugin;
 		
+		spells.add(new ArmorEnchanterSpell());
 		spells.add(new BotanicalMaturitySpell());
 		spells.add(new IronTouchSpell());
 		spells.add(new GoldenTouchSpell());
