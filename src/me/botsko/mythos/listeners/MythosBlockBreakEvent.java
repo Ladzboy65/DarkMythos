@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 import me.botsko.mythos.Mythos;
+import me.botsko.mythos.MythosNotifier;
 import me.botsko.mythos.artifacts.ArtifactBase;
 import me.botsko.mythos.registry.Registry;
 import me.botsko.mythos.spells.SpellBase;
@@ -47,6 +48,9 @@ public class MythosBlockBreakEvent implements Listener {
 				Player player = event.getPlayer();
 				player.sendMessage( plugin.playerMsg( award.getAwardMessage() ));
 				
+				// Notify nearby players
+				MythosNotifier n = new MythosNotifier();
+				n.foundSpell(player, award);
 			}
 		} else {
 			
@@ -61,6 +65,9 @@ public class MythosBlockBreakEvent implements Listener {
 					Player player = event.getPlayer();
 					player.sendMessage( plugin.playerMsg( artifact.getAwardMessage() ));
 					
+					// Notify nearby players
+					MythosNotifier n = new MythosNotifier();
+					n.foundArtifact(player, artifact);
 				}
 			}
 		}
