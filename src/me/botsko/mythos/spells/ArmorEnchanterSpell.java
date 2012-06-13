@@ -2,13 +2,10 @@ package me.botsko.mythos.spells;
 
 import java.util.Random;
 
-import me.botsko.mythos.utilities.MythosUtil;
-
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class ArmorEnchanterSpell extends SpellBase implements Spell {
 
@@ -58,22 +55,10 @@ public class ArmorEnchanterSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
-		
 		block = event.getBlock();
 		if( block.getType() == Material.GRAVEL || block.getType() == Material.LEAVES ){
-			
-			// Set item
-			ItemStack i = new ItemStack(Material.BOOK, 1);
-			i.setDurability( getSpellId() );
-			
-			// Drop the item
-			block.getWorld().dropItemNaturally(block.getLocation(), i);
-			
-			// Boom!
-			MythosUtil.awardThunder( block );
-
+			dropSpellBook();
 			return true;
-			
 		}
 		return false;
 	}

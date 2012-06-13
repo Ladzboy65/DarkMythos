@@ -7,7 +7,6 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class SkeletonSummonerSpell extends SpellBase implements Spell {
 
@@ -51,22 +50,10 @@ public class SkeletonSummonerSpell extends SpellBase implements Spell {
 	 * 
 	 */
 	public boolean getBlockBreakAward(BlockBreakEvent event){
-		
 		block = event.getBlock();
 		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			
-			// Set item
-			ItemStack i = new ItemStack(Material.BOOK, 1);
-			i.setDurability( getSpellId() );
-
-			// Drop the item
-			block.getWorld().dropItemNaturally(block.getLocation(), i);
-			
-			// Boom!
-			MythosUtil.awardThunder( block );
-			
-			return true;
-					
+			dropSpellBook();
+			return true;	
 		}
 		return false;
 	}

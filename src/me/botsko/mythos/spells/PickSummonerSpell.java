@@ -55,22 +55,10 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
-		
 		block = event.getBlock();
 		if( block.getType() == Material.IRON_ORE || block.getType() == Material.DIAMOND_ORE || block.getType() == Material.GOLD_ORE ){
-			
-			// Set item
-			ItemStack i = new ItemStack(Material.BOOK, 1);
-			i.setDurability( getSpellId() );
-			
-			// Drop the item
-			block.getWorld().dropItemNaturally(block.getLocation(), i);
-			
-			// Boom!
-			MythosUtil.awardThunder( block );
-
+			dropSpellBook();
 			return true;
-			
 		}
 		return false;
 	}

@@ -6,7 +6,6 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class ViveShrineSpell extends SpellBase implements Spell {
 
@@ -58,19 +57,8 @@ public class ViveShrineSpell extends SpellBase implements Spell {
 		
 		block = event.getBlock();
 		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			
-			// Set item
-			ItemStack i = new ItemStack(Material.BOOK, 1);
-			i.setDurability( getSpellId() );
-			
-			// Drop the item
-			block.getWorld().dropItemNaturally(block.getLocation(), i);
-			
-			// Boom!
-			MythosUtil.awardThunder( block );
-
+			dropSpellBook();
 			return true;
-			
 		}
 		return false;
 	}

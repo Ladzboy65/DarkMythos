@@ -6,7 +6,6 @@ import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class CreatureBanisherSpell extends SpellBase implements Spell {
 
@@ -55,22 +54,10 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
-		
 		block = event.getBlock();
 		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			
-			// Set item
-			ItemStack i = new ItemStack(Material.BOOK, 1);
-			i.setDurability( getSpellId() );
-			
-			// Drop the item
-			block.getWorld().dropItemNaturally(block.getLocation(), i);
-			
-			// Boom!
-			MythosUtil.awardThunder( block );
-
+			dropSpellBook();
 			return true;
-			
 		}
 		return false;
 	}
