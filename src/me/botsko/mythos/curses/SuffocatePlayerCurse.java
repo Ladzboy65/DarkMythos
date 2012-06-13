@@ -32,8 +32,7 @@ public class SuffocatePlayerCurse extends CurseBase {
 	 */
 	@Override
 	public void applyCurse(Player player){
-        player.setRemainingAir( 3 );
+        player.setRemainingAir( 0 );
         MythosUtil.subtractFromHand( player );
-		player.setHealth(0);
 	}
 }

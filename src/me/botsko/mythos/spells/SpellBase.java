@@ -7,8 +7,10 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -20,6 +22,11 @@ public class SpellBase implements MythosWeighted {
 	 * Block the action happened to
 	 */
 	protected Block block;
+	
+	/**
+	 * 
+	 */
+	protected Entity entity;
 	
 	/**
 	 * 
@@ -131,6 +138,34 @@ public class SpellBase implements MythosWeighted {
 		
 		// Boom!
 		MythosUtil.awardThunder( block );
+		
+	}
+	
+	
+	/**
+	 * 
+	 * @param event
+	 * @return
+	 */
+	public boolean getEntityDeathAward( EntityDeathEvent event ){
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 */
+	protected void entityDropSpellBook(){
+		
+		// Set item
+		ItemStack i = new ItemStack(Material.BOOK, 1);
+		i.setDurability( getSpellId() );
+		
+		// Drop the item
+		entity.getWorld().dropItemNaturally(entity.getLocation(), i);
+		
+		// Boom!
+//		MythosUtil.awardThunder( block );
 		
 	}
 	
