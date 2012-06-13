@@ -1,5 +1,7 @@
 package me.botsko.mythos.spells;
 
+import java.util.List;
+
 import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
@@ -74,6 +76,16 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 		Entity e = event.getRightClicked();
 		
 		if(e != null){
+			
+			// Check for a spell modifier
+			if(playerHasModifier( Material.DIAMOND_BLOCK, 1 )){
+				List<Entity> mobs = player.getNearbyEntities( 20, 20, 20);
+				for( Entity mob : mobs){
+					if(mob.getType().equals( e.getType() )){
+						mob.remove();
+					}
+				}
+			}
 
 			// Remove mob
 			e.remove();
