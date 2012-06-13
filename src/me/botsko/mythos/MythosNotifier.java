@@ -13,7 +13,7 @@ public class MythosNotifier {
         for (Player p : player.getServer().getOnlinePlayers()) {
             if (getDistance(p.getLocation(), player.getLocation()) <= plugin.getConfig().getInt("mythos.notify_radius")) 
                 p.sendMessage(plugin.playerMsg(player + " just found an artifact!"));
-            
+            // todo Have it display the name of the artifact
         }
     }
  
@@ -24,7 +24,7 @@ public class MythosNotifier {
         for (Player p : player.getServer().getOnlinePlayers()) {
             if (getDistance(p.getLocation(), player.getLocation()) <= plugin.getConfig().getInt("mythos.notify_radius")) 
                 p.sendMessage(plugin.playerMsg(player + " just found a spell book!"));
-		
+            // todo Have it display the name of the spell
         }
 	}
 }

@@ -20,6 +20,7 @@ import me.botsko.mythos.spells.CreatureCookerSpell;
 import me.botsko.mythos.spells.CreatureThiefSpell;
 import me.botsko.mythos.spells.DiamondTouchSpell;
 import me.botsko.mythos.spells.FeatherTouchSpell;
+import me.botsko.mythos.spells.FullHealSpell;
 import me.botsko.mythos.spells.GoldenTouchSpell;
 import me.botsko.mythos.spells.IronTouchSpell;
 import me.botsko.mythos.spells.PickSummonerSpell;
@@ -61,6 +62,7 @@ public class Registry extends RegistryManager {
 		spells.add(new CreatureThiefSpell());
 //		spells.add(new ViveShrineSummoner());
 		spells.add(new ZeusBoltSpell());
+		spells.add(new FullHealSpell());
 
 		
 		//---------------------------
