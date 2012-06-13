@@ -1,6 +1,7 @@
 package me.botsko.mythos.registry;
 
 import me.botsko.mythos.artifacts.ApollosSwordArtifact;
+import me.botsko.mythos.artifacts.ArtemisBowArtifact;
 import me.botsko.mythos.curses.ArmorDestroyerCurse;
 import me.botsko.mythos.curses.ExplosionCurse;
 import me.botsko.mythos.curses.FallCurse;
@@ -19,6 +20,7 @@ import me.botsko.mythos.spells.CreatureCookerSpell;
 import me.botsko.mythos.spells.CreatureThiefSpell;
 import me.botsko.mythos.spells.DiamondTouchSpell;
 import me.botsko.mythos.spells.FeatherTouchSpell;
+import me.botsko.mythos.spells.FullHealSpell;
 import me.botsko.mythos.spells.GoldenTouchSpell;
 import me.botsko.mythos.spells.IronTouchSpell;
 import me.botsko.mythos.spells.PickSummonerSpell;
@@ -58,8 +60,10 @@ public class Registry extends RegistryManager {
 		spells.add(new CreatureCookerSpell());
 		spells.add(new CreatureBanisherSpell());
 		spells.add(new CreatureThiefSpell());
+//		spells.add(new ViveShrineSummoner());
 		spells.add(new ZeusBoltSpell());
-		
+		spells.add(new FullHealSpell());
+
 		
 		//---------------------------
 		// CURSES
@@ -82,6 +86,7 @@ public class Registry extends RegistryManager {
 		// ARTIFACTS
 		//---------------------------
 		artifacts.add(new ApollosSwordArtifact());
+		artifacts.add(new ArtemisBowArtifact());
 		
 	}
 }
