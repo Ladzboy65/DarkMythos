@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -55,12 +56,12 @@ public class CreatureCookerSpell extends SpellBase implements Spell {
 	 * 
 	 */
 	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
+	public boolean getEntityDeathAward(EntityDeathEvent event){
+		entity = event.getEntity();
+		EntityType type = entity.getType();
+		if( type == EntityType.PIG || type == EntityType.COW || type == EntityType.MUSHROOM_COW || type == EntityType.CHICKEN ){
 			dropSpellBook();
 			return true;
-			
 		}
 		return false;
 	}

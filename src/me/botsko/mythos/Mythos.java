@@ -3,6 +3,7 @@ package me.botsko.mythos;
 import java.util.logging.Logger;
 
 import me.botsko.mythos.listeners.MythosBlockBreakEvent;
+import me.botsko.mythos.listeners.MythosEntityDeathEvent;
 import me.botsko.mythos.listeners.MythosPlayerInteractEntityEvent;
 import me.botsko.mythos.listeners.MythosPlayerInteractEvent;
 
@@ -32,6 +33,7 @@ public class Mythos extends JavaPlugin {
 //		getServer().getPluginManager().registerEvents(new MythosPlayerPickupItemEvent( this ), this);
 		getServer().getPluginManager().registerEvents(new MythosPlayerInteractEvent( this ), this);
 		getServer().getPluginManager().registerEvents(new MythosPlayerInteractEntityEvent( this ), this);
+		getServer().getPluginManager().registerEvents(new MythosEntityDeathEvent( this ), this);
 		
 	}
 	
