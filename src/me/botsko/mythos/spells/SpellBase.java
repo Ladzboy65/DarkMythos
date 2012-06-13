@@ -129,15 +129,32 @@ public class SpellBase implements MythosWeighted {
 	 */
 	protected void dropSpellBook(){
 		
-		// Set item
-		ItemStack i = new ItemStack(Material.BOOK, 1);
-		i.setDurability( getSpellId() );
+		if(block != null){
 		
-		// Drop the item
-		block.getWorld().dropItemNaturally(block.getLocation(), i);
-		
-		// Boom!
-		MythosUtil.awardThunder( block );
+			// Set item
+			ItemStack i = new ItemStack(Material.BOOK, 1);
+			i.setDurability( getSpellId() );
+			
+			// Drop the item
+			block.getWorld().dropItemNaturally(block.getLocation(), i);
+			
+			// Boom!
+			MythosUtil.awardThunder( block );
+			
+		}
+		if(entity != null){
+			
+			// Set item
+			ItemStack i = new ItemStack(Material.BOOK, 1);
+			i.setDurability( getSpellId() );
+			
+			// Drop the item
+			entity.getWorld().dropItemNaturally(entity.getLocation(), i);
+			
+			// Boom!
+//			MythosUtil.awardThunder( block );
+			
+		}
 		
 	}
 	
@@ -149,24 +166,6 @@ public class SpellBase implements MythosWeighted {
 	 */
 	public boolean getEntityDeathAward( EntityDeathEvent event ){
 		return false;
-	}
-	
-	
-	/**
-	 * 
-	 */
-	protected void entityDropSpellBook(){
-		
-		// Set item
-		ItemStack i = new ItemStack(Material.BOOK, 1);
-		i.setDurability( getSpellId() );
-		
-		// Drop the item
-		entity.getWorld().dropItemNaturally(entity.getLocation(), i);
-		
-		// Boom!
-//		MythosUtil.awardThunder( block );
-		
 	}
 	
 	
