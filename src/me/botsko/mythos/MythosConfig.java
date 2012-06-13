@@ -18,6 +18,7 @@ public class MythosConfig {
 		config.addDefault("mythos.curse_chance_range", 10);
 		config.addDefault("mythos.spell_chance_range", 500);
 		config.addDefault("mythos.artifact_chance_range", 1000);
+		config.addDefault("mythos.notify_radius", 300);
 		
 		// Copy defaults
 		config.options().copyDefaults(true);
