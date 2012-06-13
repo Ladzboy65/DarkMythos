@@ -149,6 +149,16 @@ public class SpellBase implements MythosWeighted {
 	public String getSpellUseMessage(){
 		return "";
 	}
+	
+	
+	/**
+	 * 
+	 * @param string 
+	 * @return
+	 */
+	public String getNotifyNearbyMessage( String player_name ) {
+		return "";
+	}
 
 
 	/**

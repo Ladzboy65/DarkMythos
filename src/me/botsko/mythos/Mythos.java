@@ -10,6 +10,7 @@ import me.botsko.mythos.registry.Registry;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Mythos extends JavaPlugin {
@@ -68,6 +69,20 @@ public class Mythos extends JavaPlugin {
 	public String playerError(String msg){
 		return ChatColor.GOLD + "[Mythos]: " + ChatColor.RED + msg;
 	}
+	
+	
+	/**
+	 * 
+	 * @param player
+	 * @param msg
+	 */
+	public void notifyNearby( Player player, String msg ) {
+        for (Player p : player.getServer().getOnlinePlayers()) {
+        	if(player.getLocation().distance( p.getLocation() ) <= getConfig().getInt("mythos.notify_radius")){
+                p.sendMessage(playerMsg(msg));
+        	}
+        }
+    }
 	
 	
 	/**

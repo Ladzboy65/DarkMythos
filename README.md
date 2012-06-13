@@ -14,6 +14,7 @@ If you do find a cursed spell book, pray that it's a minor curse - like a few he
 - Artemis - Goddess of wilderness, the hunt, creatures
 - Hephaestus - fire, metalworking, stonemasonry, sculpture and volcanism
 - Ares - God of war, bloodlust, violence
+- Apollo - God of music, healing, plague, the sun, prophecies, poetry, and archery
 
 
 ## Spells
@@ -29,6 +30,7 @@ If you do find a cursed spell book, pray that it's a minor curse - like a few he
 - Creature Banisher - Erases a creature from existence.
 - Creature Cooker - Provides already-cooked meat when used on animals.
 - Armor Enchanter - Rare spell that enchants your armor.
+- Full Health - Restores player health and hunger.
 
 
 ## Curses

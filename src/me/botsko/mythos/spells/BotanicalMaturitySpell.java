@@ -73,6 +73,14 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 */
+	public String getNotifyNearbyMessage( String player_name ){
+		return player_name + " discovered a magical book: Demeter's Spell of Botanical Maturity";
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	public double getCurseAmplifier(){

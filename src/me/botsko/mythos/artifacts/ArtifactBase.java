@@ -74,6 +74,14 @@ public class ArtifactBase implements MythosWeighted {
 	
 	/**
 	 * 
+	 */
+	public String getNotifyNearbyMessage( String player_name ){
+		return "";
+	}
+	
+	
+	/**
+	 * 
 	 * @param event
 	 */
 	public boolean getBlockBreakAward(BlockBreakEvent event){
