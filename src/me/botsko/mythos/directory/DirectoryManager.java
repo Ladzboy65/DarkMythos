@@ -40,7 +40,6 @@ public class DirectoryManager {
 				_tmp.add( spell );
 			}
 		}
-		System.out.print("Filtered Spell List Size: " + _tmp.size());
 		return _tmp;
 	}
 	

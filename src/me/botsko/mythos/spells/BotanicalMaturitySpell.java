@@ -7,7 +7,6 @@ import me.botsko.mythos.utilities.MythosUtil;
 import org.bukkit.Material;
 import org.bukkit.TreeType;
 import org.bukkit.block.Block;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class BotanicalMaturitySpell extends SpellBase implements Spell {
@@ -83,20 +82,6 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 			}
 		}
 		return 0;
-	}
-	
-	
-	/**
-	 * 
-	 */
-	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( isAwardedOn( block ) ){
-			dropSpellBook();
-			return true;
-		}
-		return false;
 	}
 	
 	

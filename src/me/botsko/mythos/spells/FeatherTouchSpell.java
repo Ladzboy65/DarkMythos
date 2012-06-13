@@ -9,7 +9,6 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -103,20 +102,6 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Feather Touch! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			dropSpellBook();
-			return true;
-		}
-		return false;
 	}
 	
 	

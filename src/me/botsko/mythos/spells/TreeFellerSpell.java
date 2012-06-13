@@ -8,7 +8,6 @@ import org.bukkit.Material;
 import org.bukkit.TreeSpecies;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.Tree;
@@ -43,6 +42,16 @@ public class TreeFellerSpell extends SpellBase {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.LOG || block.getType() == Material.LEAVES );
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	@Override
@@ -58,20 +67,6 @@ public class TreeFellerSpell extends SpellBase {
 	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Tree Feller! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( block.getType() == Material.LOG || block.getType() == Material.LEAVES ){
-			dropSpellBook();
-			return true;
-		}
-		return false;
 	}
 	
 	

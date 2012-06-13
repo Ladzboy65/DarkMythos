@@ -4,7 +4,6 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class IronTouchSpell extends SpellBase implements Spell {
@@ -57,22 +56,7 @@ public class IronTouchSpell extends SpellBase implements Spell {
 	public String getSpellUseMessage(){
 		return "Used spell Iron Touch! Spell book consumed.";
 	}
-	
-	
-	/**
-	 * 
-	 */
-	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		
-		block = event.getBlock();
-		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			dropSpellBook();
-			return true;
-			
-		}
-		return false;
-	}
+
 	
 	/**
 	 * 

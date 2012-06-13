@@ -24,6 +24,7 @@ import me.botsko.mythos.spells.IronTouchSpell;
 import me.botsko.mythos.spells.PickSummonerSpell;
 import me.botsko.mythos.spells.SkeletonSummonerSpell;
 import me.botsko.mythos.spells.TreeFellerSpell;
+import me.botsko.mythos.spells.ZeusBoltSpell;
 
 
 public class Directory extends DirectoryManager {
@@ -57,6 +58,7 @@ public class Directory extends DirectoryManager {
 		spells.add(new CreatureCookerSpell());
 		spells.add(new CreatureBanisherSpell());
 		spells.add(new CreatureThiefSpell());
+		spells.add(new ZeusBoltSpell());
 		
 		
 		//---------------------------

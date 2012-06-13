@@ -4,7 +4,7 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.block.Block;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class ViveShrineSpell extends SpellBase implements Spell {
@@ -31,6 +31,16 @@ public class ViveShrineSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.GRASS || block.getType() == Material.DIRT );
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	@Override
@@ -46,21 +56,6 @@ public class ViveShrineSpell extends SpellBase implements Spell {
 	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Shrine of Viveleroi! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		
-		block = event.getBlock();
-		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			dropSpellBook();
-			return true;
-		}
-		return false;
 	}
 
 	

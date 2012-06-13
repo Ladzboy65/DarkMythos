@@ -135,19 +135,19 @@ public class SpellBase implements MythosWeighted {
 
 	/**
 	 * 
-	 * @param event
 	 */
 	public boolean getBlockBreakAward(BlockBreakEvent event){
-		return false;
+		block = event.getBlock();
+		return dropSpellBook();
 	}
 	
 	
 	/**
 	 * 
 	 */
-	protected void dropSpellBook(){
+	protected boolean dropSpellBook(){
 		
-		if(block != null){
+		if(block != null && isAwardedOn(block) ){
 		
 			// Set item
 			ItemStack i = new ItemStack(Material.BOOK, 1);
@@ -159,6 +159,8 @@ public class SpellBase implements MythosWeighted {
 			// Boom!
 			MythosUtil.awardThunder( block );
 			
+			return true;
+				
 		}
 		if(entity != null){
 			
@@ -172,8 +174,10 @@ public class SpellBase implements MythosWeighted {
 			// Boom!
 //			MythosUtil.awardThunder( block );
 			
+			return true;
+			
 		}
-		
+		return false;
 	}
 	
 	

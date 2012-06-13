@@ -4,8 +4,8 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
@@ -32,10 +32,20 @@ public class ZeusBoltSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.GOLD_ORE || block.getType() == Material.LAPIS_ORE );
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	public String getAwardMessage(){
-		return "You have discovered a legendary spell: Zeus' Lightning spell! Right click to unleash the wrath of the gods!";
+		return "You have discovered a legendary spell: Zeus' Lightning spell!";
 	}
 	
 	
@@ -45,19 +55,6 @@ public class ZeusBoltSpell extends SpellBase implements Spell {
 	 */
 	public String getSpellUseMessage(){
 		return "Used Zeus' Lightning spell! Spell books consumed. Run!";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( block.getType() == Material.GOLD_ORE || block.getType() == Material.LAPIS_ORE ){
-			dropSpellBook();
-			return true;	
-		}
-		return false;
 	}
 	
 	

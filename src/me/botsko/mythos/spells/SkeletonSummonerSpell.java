@@ -3,9 +3,9 @@ package me.botsko.mythos.spells;
 import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class SkeletonSummonerSpell extends SpellBase implements Spell {
@@ -30,6 +30,16 @@ public class SkeletonSummonerSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.GRASS || block.getType() == Material.DIRT );
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	public String getAwardMessage(){
@@ -43,19 +53,6 @@ public class SkeletonSummonerSpell extends SpellBase implements Spell {
 	 */
 	public String getSpellUseMessage(){
 		return "Used spell Skeleton Summoner! Spell books consumed.";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			dropSpellBook();
-			return true;	
-		}
-		return false;
 	}
 	
 	

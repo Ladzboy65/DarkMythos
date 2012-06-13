@@ -3,8 +3,8 @@ package me.botsko.mythos.spells;
 import java.util.Random;
 
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class ArmorEnchanterSpell extends SpellBase implements Spell {
@@ -32,6 +32,16 @@ public class ArmorEnchanterSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.GRAVEL || block.getType() == Material.LEAVES );
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	@Override
@@ -52,20 +62,6 @@ public class ArmorEnchanterSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
-	 */
-	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( block.getType() == Material.GRAVEL || block.getType() == Material.LEAVES ){
-			dropSpellBook();
-			return true;
-		}
-		return false;
-	}
-	
-	
-	/**
-	 * 
 	 * @param event
 	 * @return
 	 */
@@ -77,6 +73,13 @@ public class ArmorEnchanterSpell extends SpellBase implements Spell {
 		player.getInventory().getBoots().addEnchantment(getRandomEnchantment("boots"), 1);
 		return true;
 	}
+	
+	
+	/**
+	 * 
+	 * @param armorType
+	 * @return
+	 */
 	public Enchantment getRandomEnchantment(String armorType){
 		if (armorType == "helmet"){
 			int ench = r.nextInt(7);
@@ -122,5 +125,5 @@ public class ArmorEnchanterSpell extends SpellBase implements Spell {
 				return Enchantment.PROTECTION_FALL;
 		}
 		return null;
-		}
+	}
 }

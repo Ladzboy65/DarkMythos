@@ -4,7 +4,6 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -32,6 +31,16 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.IRON_ORE || block.getType() == Material.DIAMOND_ORE || block.getType() == Material.GOLD_ORE );
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	@Override
@@ -47,20 +56,6 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Pick Summoner! Spell books consumed.";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( block.getType() == Material.IRON_ORE || block.getType() == Material.DIAMOND_ORE || block.getType() == Material.GOLD_ORE ){
-			dropSpellBook();
-			return true;
-		}
-		return false;
 	}
 	
 	

@@ -4,7 +4,6 @@ import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class DiamondTouchSpell extends SpellBase implements Spell {
@@ -41,6 +40,16 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isUsedOn( Block block ){
+		return true;
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	@Override
@@ -56,20 +65,6 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Diamond Touch! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			dropSpellBook();
-			return true;
-		}
-		return false;
 	}
 	
 	
