@@ -2,10 +2,9 @@ package me.botsko.mythos.listeners;
 
 import me.botsko.mythos.Mythos;
 import me.botsko.mythos.curses.CurseBase;
-import me.botsko.mythos.curses.CurseChoice;
+
 import me.botsko.mythos.directory.Directory;
 import me.botsko.mythos.spells.SpellBase;
-import me.botsko.mythos.spells.SpellChoice;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -17,8 +16,6 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 public class MythosPlayerInteractEntityEvent implements Listener {
 	
 	private Mythos plugin;
-	private SpellChoice sc;
-	private CurseChoice cc;
 	private Directory dr;
 	
 	/**
@@ -27,8 +24,6 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 	 */
 	public MythosPlayerInteractEntityEvent( Mythos plugin ){
 		this.plugin = plugin;
-		this.sc = new SpellChoice( plugin );
-		this.cc = new CurseChoice( plugin );
 		this.dr = new Directory();
 	}
 	
@@ -45,13 +40,13 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 			if(player.getItemInHand().getType() == Material.BOOK){
 				
 				// Use the durability to find the award id
-				SpellBase spell = sc.chooseSpell( dr.getSpells( event.getRightClicked() ), player.getItemInHand().getDurability() );
+				SpellBase spell = dr.chooseSpell( dr.getSpells( event.getRightClicked() ), player.getItemInHand().getDurability() );
 				if(spell != null){
 					
 					spell.setPlayer( player );
 					
 					// If the item is cursed, apply the curse and skip using it
-					CurseBase curse = cc.chooseRandomCurse( dr.getCurses(), spell );
+					CurseBase curse = dr.chooseRandomCurse( plugin.getConfig().getInt("mythos.curse_chance_range"), dr.getCurses(), spell );
 					if(curse == null){
 					
 						// Get the block break award

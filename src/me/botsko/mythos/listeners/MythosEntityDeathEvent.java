@@ -11,13 +11,11 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import me.botsko.mythos.Mythos;
 import me.botsko.mythos.directory.Directory;
 import me.botsko.mythos.spells.SpellBase;
-import me.botsko.mythos.spells.SpellChoice;
 
 
 public class MythosEntityDeathEvent implements Listener {
 	
 	private Mythos plugin;
-	private SpellChoice sc;
 //	private ArtifactChoice ac;
 	private Directory dr;
 	
@@ -27,7 +25,6 @@ public class MythosEntityDeathEvent implements Listener {
 	 */
 	public MythosEntityDeathEvent( Mythos plugin ){
 		this.plugin = plugin;
-		this.sc = new SpellChoice( plugin );
 //		this.ac = new ArtifactChoice( plugin );
 		this.dr = new Directory();
 	}
@@ -49,7 +46,7 @@ public class MythosEntityDeathEvent implements Listener {
 					
 					Player player = (Player)entityDamageByEntityEvent.getDamager();
 
-					SpellBase award = sc.chooseRandomSpell( dr.getSpells( entity ) );
+					SpellBase award = dr.chooseRandomSpell( plugin.getConfig().getInt("mythos.spell_chance_range"), dr.getSpells( entity ) );
 					if(award != null){
 						
 						// Get the block break award
