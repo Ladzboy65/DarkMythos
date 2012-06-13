@@ -1,6 +1,7 @@
 package me.botsko.mythos.registry;
 
 import me.botsko.mythos.artifacts.ApollosSwordArtifact;
+import me.botsko.mythos.artifacts.ArtemisBowArtifact;
 import me.botsko.mythos.curses.ArmorDestroyerCurse;
 import me.botsko.mythos.curses.ExplosionCurse;
 import me.botsko.mythos.curses.FallCurse;
@@ -58,8 +59,9 @@ public class Registry extends RegistryManager {
 		spells.add(new CreatureCookerSpell());
 		spells.add(new CreatureBanisherSpell());
 		spells.add(new CreatureThiefSpell());
+//		spells.add(new ViveShrineSummoner());
 		spells.add(new ZeusBoltSpell());
-		
+
 		
 		//---------------------------
 		// CURSES
@@ -82,6 +84,7 @@ public class Registry extends RegistryManager {
 		// ARTIFACTS
 		//---------------------------
 		artifacts.add(new ApollosSwordArtifact());
+		artifacts.add(new ArtemisBowArtifact());
 		
 	}
 }
