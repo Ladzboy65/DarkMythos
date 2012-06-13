@@ -40,6 +40,7 @@ public class DirectoryManager {
 				_tmp.add( spell );
 			}
 		}
+		System.out.print(block.getType().getClass().toString() + " Spell Count: " + _tmp.size());
 		return _tmp;
 	}
 	
@@ -49,7 +50,14 @@ public class DirectoryManager {
 	 * @param entity
 	 */
 	public List<MythosWeighted> getSpells( Entity entity ){
-		return null;
+		List<MythosWeighted> _tmp = new ArrayList<MythosWeighted>();
+		for( MythosWeighted spell : spells ){
+			if( spell.isAwardedOn( entity ) || spell.isUsedOn(entity) ){
+				_tmp.add( spell );
+			}
+		}
+		System.out.print("Creature Spell Count: " + _tmp.size());
+		return _tmp;
 	}
 	
 	
@@ -58,7 +66,7 @@ public class DirectoryManager {
 	 * @param entity
 	 */
 	public List<MythosWeighted> getCurses(){
-		return null;
+		return curses;
 	}
 	
 	

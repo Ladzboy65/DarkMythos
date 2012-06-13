@@ -3,6 +3,7 @@ package me.botsko.mythos.artifacts;
 import me.botsko.mythos.MythosWeighted;
 
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
@@ -29,8 +30,15 @@ public class ArtifactBase implements MythosWeighted {
 	/**
 	 * 
 	 */
-	@Override
-	public boolean isAwardedOn(Block block) {
+	public boolean isAwardedOn( Block block ) {
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 */
+	public boolean isAwardedOn( Entity entity ) {
 		return false;
 	}
 	
@@ -41,6 +49,16 @@ public class ArtifactBase implements MythosWeighted {
 	 * @return
 	 */
 	public boolean isUsedOn( Block block ){
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isUsedOn( Entity entity ){
 		return false;
 	}
 	

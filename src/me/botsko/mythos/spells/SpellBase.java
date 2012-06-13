@@ -71,7 +71,15 @@ public class SpellBase implements MythosWeighted {
 	/**
 	 * 
 	 */
-	public boolean isAwardedOn(Block block) {
+	public boolean isAwardedOn( Block block ) {
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 */
+	public boolean isAwardedOn( Entity entity ) {
 		return false;
 	}
 	
@@ -82,6 +90,16 @@ public class SpellBase implements MythosWeighted {
 	 * @return
 	 */
 	public boolean isUsedOn( Block block ){
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isUsedOn( Entity entity ){
 		return false;
 	}
 	

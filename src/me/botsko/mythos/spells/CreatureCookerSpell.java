@@ -5,7 +5,6 @@ import me.botsko.mythos.utilities.MythosUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
-import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -33,6 +32,17 @@ public class CreatureCookerSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Entity entity ){
+		EntityType type = entity.getType();
+		return (type == EntityType.PIG || type == EntityType.COW || type == EntityType.MUSHROOM_COW || type == EntityType.CHICKEN);
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	@Override
@@ -48,21 +58,6 @@ public class CreatureCookerSpell extends SpellBase implements Spell {
 	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Creature Cooker! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	@Override
-	public boolean getEntityDeathAward(EntityDeathEvent event){
-		entity = event.getEntity();
-		EntityType type = entity.getType();
-		if( type == EntityType.PIG || type == EntityType.COW || type == EntityType.MUSHROOM_COW || type == EntityType.CHICKEN ){
-			dropSpellBook();
-			return true;
-		}
-		return false;
 	}
 	
 	

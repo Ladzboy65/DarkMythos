@@ -1,6 +1,7 @@
 package me.botsko.mythos;
 
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 
 public interface MythosWeighted {
 	
@@ -22,9 +23,25 @@ public interface MythosWeighted {
 	
 	/**
 	 * 
+	 * @param entity
+	 * @return
+	 */
+	public boolean isAwardedOn( Entity entity );
+	
+	
+	/**
+	 * 
 	 * @param block
 	 * @return
 	 */
 	public boolean isUsedOn( Block block );
+
+	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isUsedOn( Entity entity );
 
 }

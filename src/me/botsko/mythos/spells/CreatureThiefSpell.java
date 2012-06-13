@@ -2,9 +2,7 @@ package me.botsko.mythos.spells;
 
 import me.botsko.mythos.utilities.MythosUtil;
 
-import org.bukkit.Material;
 import org.bukkit.entity.Entity;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -32,6 +30,16 @@ public class CreatureThiefSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Entity entity ){
+		return true;
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	@Override
@@ -47,20 +55,6 @@ public class CreatureThiefSpell extends SpellBase implements Spell {
 	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Creature Thief! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	@Override
-	public boolean getBlockBreakAward(BlockBreakEvent event){
-		block = event.getBlock();
-		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
-			dropSpellBook();
-			return true;
-		}
-		return false;
 	}
 	
 	

@@ -4,6 +4,7 @@ import me.botsko.mythos.MythosWeighted;
 import me.botsko.mythos.spells.SpellModifier;
 
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
 public class CurseBase implements MythosWeighted {
@@ -33,7 +34,15 @@ public class CurseBase implements MythosWeighted {
 	/**
 	 * 
 	 */
-	public boolean isAwardedOn(Block block) {
+	public boolean isAwardedOn( Block block ) {
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 */
+	public boolean isAwardedOn( Entity entity ) {
 		return false;
 	}
 	
@@ -44,6 +53,16 @@ public class CurseBase implements MythosWeighted {
 	 * @return
 	 */
 	public boolean isUsedOn( Block block ){
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isUsedOn( Entity entity ){
 		return false;
 	}
 	

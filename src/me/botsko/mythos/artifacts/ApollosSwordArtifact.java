@@ -5,6 +5,7 @@ import java.util.Random;
 import me.botsko.mythos.utilities.MythosUtil;
 
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -17,6 +18,16 @@ public class ApollosSwordArtifact extends ArtifactBase implements Artifact {
 	@Override
 	public int getWeight(){
 		return 50;
+	}
+	
+	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.DIAMOND_ORE );
 	}
 	
 	
@@ -37,7 +48,7 @@ public class ApollosSwordArtifact extends ArtifactBase implements Artifact {
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		
 		block = event.getBlock();
-		if( block.getType() == Material.DIAMOND_ORE ){
+		if( isAwardedOn(block) ){
 			
 			// Set item
 			ItemStack i = new ItemStack(Material.DIAMOND_SWORD, 1);
