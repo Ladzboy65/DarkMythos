@@ -1,4 +1,4 @@
-package me.botsko.mythos.directory;
+package me.botsko.mythos.registry;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 
 
-public class DirectoryManager {
+public class RegistryManager {
 	
 	/**
 	 * Holds the spells we offer

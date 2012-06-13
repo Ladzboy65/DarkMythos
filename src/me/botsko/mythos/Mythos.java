@@ -6,6 +6,7 @@ import me.botsko.mythos.listeners.MythosBlockBreakEvent;
 import me.botsko.mythos.listeners.MythosEntityDeathEvent;
 import me.botsko.mythos.listeners.MythosPlayerInteractEntityEvent;
 import me.botsko.mythos.listeners.MythosPlayerInteractEvent;
+import me.botsko.mythos.registry.Registry;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -15,6 +16,7 @@ public class Mythos extends JavaPlugin {
 
 	protected Logger log = Logger.getLogger("Minecraft");
 	protected FileConfiguration config;
+	protected Registry dr;
 	
 	
     /**
@@ -27,6 +29,7 @@ public class Mythos extends JavaPlugin {
 		
 		// Load configuration, or install if new
 		config = MythosConfig.init( this );
+		this.dr = new Registry();
 		
 		// Assign event listeners
 		getServer().getPluginManager().registerEvents(new MythosBlockBreakEvent( this ), this);
@@ -35,6 +38,15 @@ public class Mythos extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new MythosPlayerInteractEntityEvent( this ), this);
 		getServer().getPluginManager().registerEvents(new MythosEntityDeathEvent( this ), this);
 		
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Registry getRegistry(){
+		return this.dr;
 	}
 	
 	

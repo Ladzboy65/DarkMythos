@@ -1,4 +1,4 @@
-package me.botsko.mythos.directory;
+package me.botsko.mythos.registry;
 
 import me.botsko.mythos.artifacts.ApollosSwordArtifact;
 import me.botsko.mythos.curses.ArmorDestroyerCurse;
@@ -27,7 +27,7 @@ import me.botsko.mythos.spells.TreeFellerSpell;
 import me.botsko.mythos.spells.ZeusBoltSpell;
 
 
-public class Directory extends DirectoryManager {
+public class Registry extends RegistryManager {
 	
 	
 	/**
@@ -42,7 +42,7 @@ public class Directory extends DirectoryManager {
 	 * 
 	 * @param block
 	 */
-	public Directory(){
+	public Registry(){
 		
 		//---------------------------
 		// SPELLS

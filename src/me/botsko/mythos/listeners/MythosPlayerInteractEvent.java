@@ -2,7 +2,7 @@ package me.botsko.mythos.listeners;
 
 import me.botsko.mythos.Mythos;
 import me.botsko.mythos.curses.CurseBase;
-import me.botsko.mythos.directory.Directory;
+import me.botsko.mythos.registry.Registry;
 import me.botsko.mythos.spells.SpellBase;
 
 import org.bukkit.Material;
@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 public class MythosPlayerInteractEvent implements Listener {
 	
 	private Mythos plugin;
-	private Directory dr;
+	private Registry dr;
 	
 	/**
 	 * 
@@ -24,7 +24,7 @@ public class MythosPlayerInteractEvent implements Listener {
 	 */
 	public MythosPlayerInteractEvent( Mythos plugin ){
 		this.plugin = plugin;
-		this.dr = new Directory();
+		this.dr = plugin.getRegistry();
 	}
 	
 	

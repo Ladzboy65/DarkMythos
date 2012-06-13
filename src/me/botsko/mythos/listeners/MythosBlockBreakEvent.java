@@ -9,14 +9,14 @@ import org.bukkit.event.block.BlockBreakEvent;
 
 import me.botsko.mythos.Mythos;
 import me.botsko.mythos.artifacts.ArtifactBase;
-import me.botsko.mythos.directory.Directory;
+import me.botsko.mythos.registry.Registry;
 import me.botsko.mythos.spells.SpellBase;
 
 
 public class MythosBlockBreakEvent implements Listener {
 	
 	private Mythos plugin;
-	private Directory dr;
+	private Registry dr;
 	
 	/**
 	 * 
@@ -24,7 +24,7 @@ public class MythosBlockBreakEvent implements Listener {
 	 */
 	public MythosBlockBreakEvent( Mythos plugin ){
 		this.plugin = plugin;
-		this.dr = new Directory();
+		this.dr = plugin.getRegistry();
 	}
 
 	
