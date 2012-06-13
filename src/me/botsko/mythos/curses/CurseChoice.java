@@ -24,22 +24,7 @@ public class CurseChoice {
 	 * @todo I'd like them to self-register eventually
 	 */
 	public CurseChoice( Mythos plugin ){
-		
 		this.plugin = plugin;
-		
-		curses.add(new HealthDamageCurse());
-		curses.add(new PoisonPlayerCurse());
-		curses.add(new KillPlayerCurse());
-		curses.add(new LoseXPCurse());
-		curses.add(new ExplosionCurse());
-		curses.add(new FallCurse());
-		curses.add(new SmitePlayerCurse());
-		curses.add(new IgnitePlayerCurse());
-		curses.add(new InventoryCurse());
-		curses.add(new ZombieAppearanceCurse());
-		curses.add(new ArmorDestroyerCurse());
-		curses.add(new SuffocatePlayerCurse());
-		
 	}
 	
 	
@@ -47,7 +32,9 @@ public class CurseChoice {
 	 * Chooses a random reward.
 	 * @return
 	 */
-	public CurseBase chooseRandomCurse( SpellBase spell ){
+	public CurseBase chooseRandomCurse( List<MythosWeighted> curses, SpellBase spell ){
+		
+		this.curses = curses;
 		
 		List<MythosWeighted> available_curses = curses;
 		double curse_chance_range = plugin.getConfig().getInt("mythos.curse_chance_range");

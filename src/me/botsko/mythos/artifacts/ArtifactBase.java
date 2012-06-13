@@ -28,6 +28,25 @@ public class ArtifactBase implements MythosWeighted {
 	
 	/**
 	 * 
+	 */
+	@Override
+	public boolean isAwardedOn(Block block) {
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isUsedOn( Block block ){
+		return false;
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	public String getAwardMessage(){

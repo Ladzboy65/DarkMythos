@@ -3,6 +3,7 @@ package me.botsko.mythos.listeners;
 import me.botsko.mythos.Mythos;
 import me.botsko.mythos.curses.CurseBase;
 import me.botsko.mythos.curses.CurseChoice;
+import me.botsko.mythos.directory.Directory;
 import me.botsko.mythos.spells.SpellBase;
 import me.botsko.mythos.spells.SpellChoice;
 
@@ -19,6 +20,7 @@ public class MythosPlayerInteractEvent implements Listener {
 	private Mythos plugin;
 	private SpellChoice sc;
 	private CurseChoice cc;
+	private Directory dr;
 	
 	/**
 	 * 
@@ -28,6 +30,7 @@ public class MythosPlayerInteractEvent implements Listener {
 		this.plugin = plugin;
 		this.sc = new SpellChoice( plugin );
 		this.cc = new CurseChoice( plugin );
+		this.dr = new Directory();
 	}
 	
 	
@@ -43,13 +46,13 @@ public class MythosPlayerInteractEvent implements Listener {
 			if(player.getItemInHand().getType() == Material.BOOK){
 				
 				// Use the durability to find the award id
-				SpellBase spell = sc.chooseSpell( player.getItemInHand().getDurability() );
+				SpellBase spell = sc.chooseSpell( dr.getSpells( event.getClickedBlock() ), player.getItemInHand().getDurability() );
 				if(spell != null){
 					
 					spell.setPlayer( player );
 					
 					// If the item is cursed, apply the curse and skip using it
-					CurseBase curse = cc.chooseRandomCurse( spell );
+					CurseBase curse = cc.chooseRandomCurse( dr.getCurses(), spell );
 					if(curse == null){
 					
 						// Get the block break award

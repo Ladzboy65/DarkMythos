@@ -1,6 +1,5 @@
 package me.botsko.mythos.spells;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -14,34 +13,12 @@ public class SpellChoice {
 	private Mythos plugin;
 	
 	/**
-	 * Holds the spells we offer
-	 */
-	List<MythosWeighted> spells = new ArrayList<MythosWeighted>();
-	
-	
-	/**
 	 * Add spells to the list.
 	 * @todo I'd like them to self-register eventually
 	 * 
 	 */
 	public SpellChoice( Mythos plugin ){
-		
 		this.plugin = plugin;
-		
-		spells.add(new ArmorEnchanterSpell());
-		spells.add(new BotanicalMaturitySpell());
-		spells.add(new IronTouchSpell());
-		spells.add(new GoldenTouchSpell());
-		spells.add(new DiamondTouchSpell());
-		spells.add(new FeatherTouchSpell());
-		spells.add(new CreatureThiefSpell());
-		spells.add(new PickSummonerSpell());
-		spells.add(new CreatureBanisherSpell());
-//		spells.add(new ViveTouchSpell());
-		spells.add(new SkeletonSummonerSpell());
-		spells.add(new TreeFellerSpell());
-		spells.add(new CreatureCookerSpell());
-		
 	}
 	
 	
@@ -49,7 +26,7 @@ public class SpellChoice {
 	 * Chooses a random reward.
 	 * @return
 	 */
-	public SpellBase chooseRandomSpell(){
+	public SpellBase chooseRandomSpell( List<MythosWeighted> spells ){
 		// We only want to choose a weighted award
 		// very rarely, so it's odds are checked first
 		if(WeightedRandom.getRandomNumber( plugin.getConfig().getInt("mythos.spell_chance_range") ) == 2){
@@ -63,7 +40,7 @@ public class SpellChoice {
 	 * Chooses a random reward.
 	 * @return
 	 */
-	public SpellBase chooseSpell(int spell_id){
+	public SpellBase chooseSpell(List<MythosWeighted> spells, int spell_id){
 		Iterator<MythosWeighted> iterator = spells.iterator();
 		while (iterator.hasNext()) {
 			SpellBase spell = (SpellBase) iterator.next();

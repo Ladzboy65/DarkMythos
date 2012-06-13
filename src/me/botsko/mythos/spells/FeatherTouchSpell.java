@@ -37,6 +37,26 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.GRASS || block.getType() == Material.DIRT );
+	}
+	
+	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isUsedOn( Block block ){
+		return true;
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	public double getCurseAmplifier(){

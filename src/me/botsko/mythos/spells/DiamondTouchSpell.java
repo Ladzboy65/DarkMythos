@@ -29,6 +29,15 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	}
 	
 	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.GRASS || block.getType() == Material.DIRT );
+	}
+	
 	
 	/**
 	 * 

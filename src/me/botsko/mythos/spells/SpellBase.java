@@ -68,6 +68,24 @@ public class SpellBase implements MythosWeighted {
 	}
 	
 	
+	/**
+	 * 
+	 */
+	public boolean isAwardedOn(Block block) {
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isUsedOn( Block block ){
+		return false;
+	}
+	
+	
 //	/**
 //	 * 
 //	 * @return

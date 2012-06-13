@@ -23,10 +23,7 @@ public class ArtifactChoice {
 	 * @todo I'd like them to self-register eventually
 	 */
 	public ArtifactChoice( Mythos plugin ){
-		
 		this.plugin = plugin;
-		
-		artifacts.add(new ApollosSwordArtifact());
 	}
 	
 	
@@ -34,7 +31,8 @@ public class ArtifactChoice {
 	 * Chooses a random reward.
 	 * @return
 	 */
-	public ArtifactBase chooseRandomArtifact(){
+	public ArtifactBase chooseRandomArtifact( List<MythosWeighted> artifacts ){
+		this.artifacts = artifacts;
 		// We only want to choose a weighted artifact
 		// very rarely, so it's odds are checked first
 		if(WeightedRandom.getRandomNumber( plugin.getConfig().getInt("mythos.artifact_chance_range") ) == 2){

@@ -31,6 +31,16 @@ public class IronTouchSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.GRASS || block.getType() == Material.DIRT );
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	@Override

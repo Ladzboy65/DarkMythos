@@ -34,6 +34,26 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isAwardedOn( Block block ){
+		return ( block.getType() == Material.GRASS || block.getType() == Material.DIRT );
+	}
+	
+	
+	/**
+	 * 
+	 * @param block
+	 * @return
+	 */
+	public boolean isUsedOn( Block block ){
+		return ( block.getType() == Material.SAPLING || block.getType() == Material.CROPS || block.getType() == Material.MELON_STEM || block.getType() == Material.PUMPKIN_STEM );
+	}
+	
+	
+	/**
+	 * 
 	 * @return
 	 */
 	@Override
@@ -72,7 +92,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		block = event.getBlock();
-		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
+		if( isAwardedOn( block ) ){
 			dropSpellBook();
 			return true;
 		}
