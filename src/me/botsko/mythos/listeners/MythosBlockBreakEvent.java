@@ -37,7 +37,7 @@ public class MythosBlockBreakEvent implements Listener {
 		
 		Block block = event.getBlock();
 	
-		SpellBase award = dr.chooseRandomSpell( plugin.getConfig().getInt("mythos.spell_chance_range"), dr.getSpells( block ) );
+		SpellBase award = (SpellBase) dr.chooseRandom( plugin.getConfig().getInt("mythos.spell_chance_range"), dr.getSpells( block ) );
 		if(award != null){
 			
 			// Get the block break award
@@ -51,7 +51,7 @@ public class MythosBlockBreakEvent implements Listener {
 		} else {
 			
 			// If no award was given we have the possibility of an artifact
-			ArtifactBase artifact = dr.chooseRandomArtifact( plugin.getConfig().getInt("mythos.artifact_chance_range"), dr.getArtifacts( block ) );
+			ArtifactBase artifact = (ArtifactBase) dr.chooseRandom( plugin.getConfig().getInt("mythos.artifact_chance_range"), dr.getArtifacts( block ) );
 			if(artifact != null){
 				
 				// Get the block break award

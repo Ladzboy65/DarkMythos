@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import me.botsko.mythos.MythosWeighted;
-import me.botsko.mythos.artifacts.ArtifactBase;
 import me.botsko.mythos.curses.CurseBase;
 import me.botsko.mythos.spells.SpellBase;
 import me.botsko.mythos.utilities.WeightedRandom;
@@ -93,20 +92,6 @@ public class DirectoryManager {
 	 * Chooses a random reward.
 	 * @return
 	 */
-	public SpellBase chooseRandomSpell( int range, List<MythosWeighted> spells ){
-		// We only want to choose a weighted award
-		// very rarely, so it's odds are checked first
-		if(WeightedRandom.getRandomNumber( range ) == 2){
-			return (SpellBase) WeightedRandom.chooseOnWeight(spells);
-		}
-		return null;
-	}
-	
-	
-	/**
-	 * Chooses a random reward.
-	 * @return
-	 */
 	public SpellBase chooseSpell(List<MythosWeighted> spells, int spell_id){
 		Iterator<MythosWeighted> iterator = spells.iterator();
 		while (iterator.hasNext()) {
@@ -163,12 +148,12 @@ public class DirectoryManager {
 	 * Chooses a random reward.
 	 * @return
 	 */
-	public ArtifactBase chooseRandomArtifact( int range, List<MythosWeighted> artifacts ){
+	public MythosWeighted chooseRandom( int range, List<MythosWeighted> artifacts ){
 		this.artifacts = artifacts;
 		// We only want to choose a weighted artifact
 		// very rarely, so it's odds are checked first
 		if(WeightedRandom.getRandomNumber( range ) == 2){
-			return (ArtifactBase) WeightedRandom.chooseOnWeight(artifacts);
+			return WeightedRandom.chooseOnWeight(artifacts);
 		}
 		return null;
 	}

@@ -16,7 +16,6 @@ import me.botsko.mythos.spells.SpellBase;
 public class MythosEntityDeathEvent implements Listener {
 	
 	private Mythos plugin;
-//	private ArtifactChoice ac;
 	private Directory dr;
 	
 	/**
@@ -25,7 +24,6 @@ public class MythosEntityDeathEvent implements Listener {
 	 */
 	public MythosEntityDeathEvent( Mythos plugin ){
 		this.plugin = plugin;
-//		this.ac = new ArtifactChoice( plugin );
 		this.dr = new Directory();
 	}
 
@@ -46,7 +44,7 @@ public class MythosEntityDeathEvent implements Listener {
 					
 					Player player = (Player)entityDamageByEntityEvent.getDamager();
 
-					SpellBase award = dr.chooseRandomSpell( plugin.getConfig().getInt("mythos.spell_chance_range"), dr.getSpells( entity ) );
+					SpellBase award = (SpellBase) dr.chooseRandom( plugin.getConfig().getInt("mythos.spell_chance_range"), dr.getSpells( entity ) );
 					if(award != null){
 						
 						// Get the block break award
