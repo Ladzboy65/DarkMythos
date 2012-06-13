@@ -87,26 +87,6 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getAwardMessage(){
-		return "You discovered a magical book: Hephaestus' Spell of Feather Touch";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getSpellUseMessage(){
-		return "Used spell Feather Touch! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
 	 * @param event
 	 * @return
 	 */

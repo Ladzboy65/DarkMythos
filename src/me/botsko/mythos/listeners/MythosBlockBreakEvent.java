@@ -37,18 +37,19 @@ public class MythosBlockBreakEvent implements Listener {
 		
 		Block block = event.getBlock();
 	
-		SpellBase award = (SpellBase) dr.chooseRandom( plugin.getConfig().getInt("mythos.spell_chance_range"), dr.getSpells( block ) );
-		if(award != null){
+		SpellBase spell = (SpellBase) dr.chooseRandom( plugin.getConfig().getInt("mythos.spell_chance_range"), dr.getSpells( block ) );
+		if(spell != null){
 			
 			// Get the block break award
-			if( award.getBlockBreakAward(event) ){
+			if( spell.getBlockBreakAward(event) ){
 			
 				// Message the player
 				Player player = event.getPlayer();
-				player.sendMessage( plugin.playerMsg( award.getAwardMessage() ));
+				player.sendMessage( plugin.playerMsg( plugin.getLang().getString("spells." + spell.getLangClassname() + ".awarded" ) ));
 				
 				// Notify nearby players
-				plugin.notifyNearby( player, award.getNotifyNearbyMessage( player.getName() ) );
+				String msg = plugin.getLang().getString("spells." + spell.getLangClassname() + ".nearby" ).replace("{player}", player.getName());
+				plugin.notifyNearby( player, msg );
 				
 			}
 		} else {
@@ -62,10 +63,11 @@ public class MythosBlockBreakEvent implements Listener {
 				
 					// Message the player
 					Player player = event.getPlayer();
-					player.sendMessage( plugin.playerMsg( artifact.getAwardMessage() ));
+					player.sendMessage( plugin.playerMsg( plugin.getLang().getString("artifacts." + artifact.getLangClassname() + ".awarded" ) ));
 					
 					// Notify nearby players
-					plugin.notifyNearby( player, artifact.getNotifyNearbyMessage( player.getName() ) );
+					String msg = plugin.getLang().getString("spells." + artifact.getLangClassname() + ".nearby" ).replace("{player}", player.getName());
+					plugin.notifyNearby( player, msg );
 					
 				}
 			}

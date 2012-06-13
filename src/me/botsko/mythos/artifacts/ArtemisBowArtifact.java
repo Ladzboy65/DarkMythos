@@ -34,16 +34,6 @@ public class ArtemisBowArtifact extends ArtifactBase implements Artifact {
 
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getAwardMessage(){
-		return "You've just discovered a Fabled Bow of Artemis!";
-	}
-
-
-	/**
-	 * 
 	 */
 	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){

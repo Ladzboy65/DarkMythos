@@ -41,26 +41,6 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getAwardMessage(){
-		return "You discovered a magical book: Hephaestus' Pick Summoner!";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getSpellUseMessage(){
-		return "Used spell Pick Summoner! Spell books consumed.";
-	}
-	
-	
-	/**
-	 * 
 	 * @param event
 	 * @return
 	 */

@@ -17,16 +17,6 @@ public class PoisonPlayerCurse extends CurseBase {
 	public int getWeight(){
 		return 60;
 	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book was cursed... Ares' Spell of Poison!";
-	}
 
 	
 	/**

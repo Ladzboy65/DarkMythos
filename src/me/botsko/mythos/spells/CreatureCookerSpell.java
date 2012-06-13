@@ -43,26 +43,6 @@ public class CreatureCookerSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getAwardMessage(){
-		return "You discovered a magical book: Artemis' Creature Cooker";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getSpellUseMessage(){
-		return "Used spell Creature Cooker! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
 	 * @param event
 	 * @return
 	 */

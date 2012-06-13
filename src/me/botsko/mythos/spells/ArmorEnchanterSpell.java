@@ -42,26 +42,6 @@ public class ArmorEnchanterSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getAwardMessage(){
-		return "You discovered a very rare spell: Hephaestus' spell of Armor Enchanter";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getSpellUseMessage(){
-		return "Used spell Armor enchanter! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
 	 * @param event
 	 * @return
 	 */

@@ -13,13 +13,6 @@ public interface Curse {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	public String getMessage();
-	
-	
-	/**
-	 * 
 	 */
 	public SpellModifier getSpellModifier();
 	

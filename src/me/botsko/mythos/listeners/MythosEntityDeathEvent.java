@@ -44,14 +44,18 @@ public class MythosEntityDeathEvent implements Listener {
 					
 					Player player = (Player)entityDamageByEntityEvent.getDamager();
 
-					SpellBase award = (SpellBase) dr.chooseRandom( plugin.getConfig().getInt("mythos.spell_chance_range"), dr.getSpells( entity ) );
-					if(award != null){
+					SpellBase spell = (SpellBase) dr.chooseRandom( plugin.getConfig().getInt("mythos.spell_chance_range"), dr.getSpells( entity ) );
+					if(spell != null){
 						
 						// Get the block break award
-						if( award.getEntityDeathAward(event) ){
+						if( spell.getEntityDeathAward(event) ){
 			
 							// Message the player
-							player.sendMessage( plugin.playerMsg( award.getAwardMessage() ));
+							player.sendMessage( plugin.playerMsg( plugin.getLang().getString("spells." + spell.getLangClassname() + ".awarded" ) ));
+							
+							// Notify nearby players
+							String msg = plugin.getLang().getString("spells." + spell.getLangClassname() + ".nearby" ).replace("{player}", player.getName());
+							plugin.notifyNearby( player, msg );
 							
 						}
 					} else {

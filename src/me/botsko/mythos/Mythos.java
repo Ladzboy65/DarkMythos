@@ -17,6 +17,7 @@ public class Mythos extends JavaPlugin {
 
 	protected Logger log = Logger.getLogger("Minecraft");
 	protected FileConfiguration config;
+	protected FileConfiguration lang;
 	protected Registry dr;
 	
 	
@@ -29,7 +30,13 @@ public class Mythos extends JavaPlugin {
 		this.log("Initializing plugin.");
 		
 		// Load configuration, or install if new
-		config = MythosConfig.init( this );
+		MythosConfig mc = new MythosConfig( this );
+		config = mc.getConfig();
+		
+		// Load language files
+		lang = mc.getLang();
+		
+		// Load spell/curse/artifact registry
 		this.dr = new Registry();
 		
 		// Assign event listeners
@@ -53,11 +60,23 @@ public class Mythos extends JavaPlugin {
 	
 	/**
 	 * 
+	 * @return
+	 */
+	public FileConfiguration getLang(){
+		return this.lang;
+	}
+	
+	
+	/**
+	 * 
 	 * @param msg
 	 * @return
 	 */
 	public String playerMsg(String msg){
-		return ChatColor.GOLD + "[Mythos]: " + ChatColor.WHITE + msg;
+		if(msg != null){
+			return ChatColor.GOLD + "[Mythos]: " + ChatColor.WHITE + msg;
+		}
+		return "";
 	}
 	
 	
@@ -67,7 +86,10 @@ public class Mythos extends JavaPlugin {
 	 * @return
 	 */
 	public String playerError(String msg){
-		return ChatColor.GOLD + "[Mythos]: " + ChatColor.RED + msg;
+		if(msg != null){
+			return ChatColor.GOLD + "[Mythos]: " + ChatColor.RED + msg;
+		}
+		return "";
 	}
 	
 	
@@ -78,8 +100,10 @@ public class Mythos extends JavaPlugin {
 	 */
 	public void notifyNearby( Player player, String msg ) {
         for (Player p : player.getServer().getOnlinePlayers()) {
-        	if(player.getLocation().distance( p.getLocation() ) <= getConfig().getInt("mythos.notify_radius")){
-                p.sendMessage(playerMsg(msg));
+        	if( !p.equals( player ) ){
+	        	if(player.getLocation().distance( p.getLocation() ) <= getConfig().getInt("mythos.notify_radius")){
+	                p.sendMessage(playerMsg(msg));
+	        	}
         	}
         }
     }

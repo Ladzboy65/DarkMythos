@@ -50,26 +50,6 @@ public class GoldenTouchSpell extends SpellBase implements Spell {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getAwardMessage(){
-		return "You discovered a magical book: Hephaestus' Spell of Golden Touch";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getSpellUseMessage(){
-		return "Used spell Golden Touch! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
 	 * @param event
 	 * @return
 	 */

@@ -13,17 +13,7 @@ public class SmitePlayerCurse extends CurseBase {
 	public int getWeight(){
 		return 1;
 	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book has been cursed by Zeus!";
-	}
-	
+
 	
 	/**
 	 * 

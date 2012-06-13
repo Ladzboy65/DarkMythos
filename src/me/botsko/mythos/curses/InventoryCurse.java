@@ -23,16 +23,6 @@ public class InventoryCurse extends CurseBase {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book held a strong curse... you had an item stolen!";
-	}
-	
-	
-	/**
-	 * 
 	 * @param player
 	 */
 	@Override

@@ -30,6 +30,14 @@ public class ArtifactBase implements MythosWeighted {
 	/**
 	 * 
 	 */
+	public String getLangClassname(  ){
+		return this.getClass().getName().replace("me.botsko.mythos.artifacts.", "");
+	}
+	
+	
+	/**
+	 * 
+	 */
 	public boolean isAwardedOn( Block block ) {
 		return false;
 	}
@@ -60,15 +68,6 @@ public class ArtifactBase implements MythosWeighted {
 	 */
 	public boolean isUsedOn( Entity entity ){
 		return false;
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getAwardMessage(){
-		return "";
 	}
 	
 	

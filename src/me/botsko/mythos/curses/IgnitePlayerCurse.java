@@ -14,17 +14,7 @@ public class IgnitePlayerCurse extends CurseBase {
 	public int getWeight(){
 		return 1;
 	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book held a powerful curse... you have set yourself on fire!";
-	}
-	
+
 	
 	/**
 	 * 

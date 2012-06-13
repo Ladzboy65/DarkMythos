@@ -55,34 +55,6 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
-	@Override
-	public String getAwardMessage(){
-		return "You discovered a magical book: Demeter's Spell of Botanical Maturity";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getSpellUseMessage(){
-		return "Used spell Botanical Maturity! Spell book consumed.";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	public String getNotifyNearbyMessage( String player_name ){
-		return player_name + " discovered a magical book: Demeter's Spell of Botanical Maturity";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
 	public double getCurseAmplifier(){
 		if(modifier != null){
 			if(modifier.getMaterial() == Material.DIAMOND_BLOCK){

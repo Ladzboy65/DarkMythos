@@ -24,16 +24,6 @@ public class ArmorDestroyerCurse extends CurseBase {
 	public int getWeight(){
 		return 60;
 	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book was cursed by Hephaestus! A piece of armor has been destroyed!";
-	}
 
 	
 	/**

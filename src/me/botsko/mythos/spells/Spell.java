@@ -19,13 +19,7 @@ public interface Spell {
 	 */
 	public int getWeight();
 	
-	
-	/**
-	 * 
-	 * @return
-	 */
-//	public int getLevel();
-	
+
 	
 	/**
 	 * 
@@ -40,20 +34,5 @@ public interface Spell {
 	 */
 	public List<MythosWeighted> getCurseChoices();
 	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getAwardMessage();
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getSpellUseMessage();
-	
-	
-	
+
 }

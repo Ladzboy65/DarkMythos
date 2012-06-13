@@ -48,27 +48,7 @@ public class TreeFellerSpell extends SpellBase {
 	public boolean isAwardedOn( Block block ){
 		return ( block.getType() == Material.LOG || block.getType() == Material.LEAVES );
 	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getAwardMessage(){
-		return "You discovered a magical book: Demeter's Tree Feller";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getSpellUseMessage(){
-		return "Used spell Tree Feller! Spell book consumed.";
-	}
-	
+
 	
 	/**
 	 * Handle the Tree Feller ability.

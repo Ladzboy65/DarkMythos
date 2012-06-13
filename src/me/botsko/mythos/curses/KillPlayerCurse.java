@@ -19,16 +19,6 @@ public class KillPlayerCurse extends CurseBase {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book held Ares' Ultimate Curse... you have sacrificed your life!";
-	}
-	
-	
-	/**
-	 * 
 	 * @param player
 	 */
 	@Override

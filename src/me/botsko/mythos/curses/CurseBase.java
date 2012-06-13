@@ -24,12 +24,11 @@ public class CurseBase implements MythosWeighted {
 	
 	/**
 	 * 
-	 * @return
 	 */
-	public String getMessage(){
-		return "";
+	public String getLangClassname(  ){
+		return this.getClass().getName().replace("me.botsko.mythos.curses.", "");
 	}
-	
+
 	
 	/**
 	 * 

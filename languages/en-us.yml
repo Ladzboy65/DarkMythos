@@ -1,0 +1,89 @@
+spells:
+  TreeFellerSpell:
+    awarded: "You discovered a magical book: Demeter's Tree Feller"
+    used: "Used spell Tree Feller! Spell book consumed."
+    nearby: "{player} discovered a magical book: Demeter's Tree Feller"
+  IronTouchSpell:
+    awarded: "You discovered a magical book: Hephaestus' Spell of Iron Touch"
+    used: "Used spell Iron Touch! Spell book consumed."
+    nearby: "{player} discovered a magical book: Hephaestus' Spell of Iron Touch"
+  ArmorEnchanterSpell:
+    awarded: "You discovered a very rare spell: Hephaestus' spell of Armor Enchanter"
+    used: "Used spell Armor enchanter! Spell book consumed."
+    nearby: "{player} discovered a very rare spell: Hephaestus' spell of Armor Enchanter"
+  BotanicalMaturitySpell:
+    awarded: "You discovered a magical book: Demeter's Spell of Botanical Maturity"
+    used: "Used spell Botanical Maturity! Spell book consumed."
+    nearby: "{player} discovered a magical book: Demeter's Spell of Botanical Maturity"
+  CreatureBanisherSpell:
+    awarded: "You discovered a magical book: Artemis' Spell of Creature Banishing"
+    used: "Used spell Creature Banisher! Spell book consumed."
+    nearby: "{player} discovered a magical book: Artemis' Spell of Creature Banishing"
+  CreatureCookerSpell:
+    awarded: "You discovered a magical book: Artemis' Creature Cooker"
+    used: "Used spell Creature Cooker! Spell book consumed."
+    nearby: "{player} discovered a magical book: Artemis' Creature Cooker"
+  CreatureThiefSpell:
+    awarded: "You discovered a magical book: Artemis' Creature Thief"
+    used: "Used spell Creature Thief! Spell book consumed."
+    nearby: "{player} discovered a magical book: Artemis' Creature Thief"
+  DiamondTouchSpell:
+    awarded: "You discovered a magical book: Hephaestus' Spell of Diamond Touch"
+    used: "Used spell Diamond Touch! Spell book consumed."
+    nearby: "{player} discovered a magical book: Hephaestus' Spell of Diamond Touch"
+  FeatherTouchSpell:
+    awarded: "You discovered a magical book: Hephaestus' Spell of Feather Touch"
+    used: "Used spell Feather Touch! Spell book consumed."
+    nearby: "{player} discovered a magical book: Hephaestus' Spell of Feather Touch"
+  FullHealSpell:
+    awarded: "You discovered a magical book: Apollo's Spell of Healing"
+    used: "Used Spell full heal! Apollo grants you full health and hunger!"
+    nearby: "{player} discovered a magical book: Apollo's Spell of Healing"
+  GoldenTouchSpell:
+    awarded: "You discovered a magical book: Hephaestus' Spell of Golden Touch"
+    used: "Used spell Golden Touch! Spell book consumed."
+    nearby: "{player} discovered a magical book: Hephaestus' Spell of Golden Touch"
+  PickSummonerSpell:
+    awarded: "You discovered a magical book: Hephaestus' Pick Summoner!"
+    used: "Used spell Pick Summoner! Spell books consumed."
+    nearby: "{player} discovered a magical book: Hephaestus' Pick Summoner!"
+  PickSummonerSpell:
+    awarded: "You have discovered a rare magical book: Shrine of Viveleroi!"
+    used: "Used spell Shrine of Viveleroi! Spell book consumed."
+    nearby: "{player} discovered a rare magical book: Shrine of Viveleroi!"
+    
+    
+curses:
+  ArmorDestroyerCurse:
+    applied: "Spell book was cursed by Hephaestus! A piece of armor has been destroyed!"
+  ExplosionCurse:
+    applied: "Spell book was cursed by Artago, God of Explosions!"
+  FallCurse:
+    applied: "Spell book was cursed... you have been shot up to the heavens!"
+  HealthDamageCurse:
+    applied: "Spell book was cursed! Ares demands a sacrifice of health!"
+  IgnitePlayerCurse:
+    applied: "Spell book held a powerful curse... you have set yourself on fire!"
+  InventoryCurse:
+    applied: "Spell book held a strong curse... you had an item stolen!"
+  KillPlayerCurse:
+    applied: "Spell book held Ares' Ultimate Curse... you have sacrificed your life!"
+  LoseXPCurse:
+    applied: "Spell book was cursed... you have sacrificed XP!"
+  PoisonPlayerCurse:
+    applied: "Spell book was cursed... Ares' Spell of Poison!"
+  SmitePlayerCurse:
+    applied: "Spell book has been cursed by Zeus!"
+  SuffocatePlayerCurse:
+    applied: "Spell book held a powerful curse... you're suffocating!"
+  ZombieAppearanceCurse:
+    applied: "Spell book was cursed! Hades Summons an Army of zombies to attack you!"
+    
+    
+artifacts:
+  ApollosSwordArtifact:
+    awarded: "You've just discovered a Mighty Sword of Apollo!"
+    nearby: "{player} just discovered a Mighty Sword of Apollo!"
+  ArtemisBowArtifact:
+    awarded: "You've just discovered a Fabled Bow of Artemis!"
+    nearby: "{player} just discovered a Fabled Bow of Artemis!"

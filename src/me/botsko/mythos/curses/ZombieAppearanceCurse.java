@@ -18,16 +18,7 @@ public class ZombieAppearanceCurse extends CurseBase {
 	public int getWeight(){
 		return 40;
 	}
-	
 
-	/**
-	 *
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book was cursed! Hades Summons an Army of zombies to attack you!";
-	}
 
 	/**
 	 *

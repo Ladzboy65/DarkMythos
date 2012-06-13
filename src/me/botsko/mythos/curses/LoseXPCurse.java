@@ -19,16 +19,6 @@ public class LoseXPCurse extends CurseBase {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book was cursed... you have sacrificed XP!";
-	}
-
-	
-	/**
-	 * 
 	 * @param player
 	 */
 	@Override

@@ -53,7 +53,7 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 						if( spell.useSpellPlayerEntityInteract(event) ){
 						
 							// Message the player
-							player.sendMessage( plugin.playerMsg( spell.getSpellUseMessage() ));
+							player.sendMessage( plugin.playerMsg( plugin.getLang().getString("spells." + spell.getLangClassname() + ".used" ) ));
 							
 						}
 					} else {
@@ -61,7 +61,7 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 						curse.applyCurse(player);
 						
 						// Tell them about the curse
-						player.sendMessage( plugin.playerMsg( curse.getMessage() ));
+						player.sendMessage( plugin.playerMsg( plugin.getLang().getString("curses." + curse.getLangClassname() + ".applied" ) ));
 						
 					}
 				}

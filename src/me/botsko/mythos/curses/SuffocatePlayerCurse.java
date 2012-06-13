@@ -14,17 +14,7 @@ public class SuffocatePlayerCurse extends CurseBase {
 	public int getWeight(){
 		return 70;
 	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book held a powerful curse... you're suffocating!";
-	}
-	
+
 	
 	/**
 	 * 

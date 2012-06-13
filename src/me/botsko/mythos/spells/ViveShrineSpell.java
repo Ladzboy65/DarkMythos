@@ -37,26 +37,6 @@ public class ViveShrineSpell extends SpellBase implements Spell {
 	public boolean isAwardedOn( Block block ){
 		return ( block.getType() == Material.GRASS || block.getType() == Material.DIRT );
 	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getAwardMessage(){
-		return "You have discovered a rare magical book: Shrine of Viveleroi!";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getSpellUseMessage(){
-		return "Used spell Shrine of Viveleroi! Spell book consumed.";
-	}
 
 	
 	/**

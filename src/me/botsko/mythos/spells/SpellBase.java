@@ -71,6 +71,14 @@ public class SpellBase implements MythosWeighted {
 	/**
 	 * 
 	 */
+	public String getLangClassname(  ){
+		return this.getClass().getName().replace("me.botsko.mythos.spells.", "");
+	}
+	
+	
+	/**
+	 * 
+	 */
 	public boolean isAwardedOn( Block block ) {
 		return false;
 	}
@@ -130,24 +138,6 @@ public class SpellBase implements MythosWeighted {
 	 */
 	public List<MythosWeighted> getCurseChoices(){
 		return null;
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getAwardMessage(){
-		return "";
-	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getSpellUseMessage(){
-		return "";
 	}
 	
 	

@@ -33,24 +33,6 @@ public class ApollosSwordArtifact extends ArtifactBase implements Artifact {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getAwardMessage(){
-		return "You've just discovered a Mighty Sword of Apollo!";
-	}
-	
-	
-	/**
-	 * 
-	 */
-	public String getNotifyNearbyMessage( String player_name ){
-		return player_name + " just discovered a Mighty Sword of Apollo!";
-	}
-	
-	
-	/**
-	 * 
 	 */
 	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){

@@ -14,16 +14,6 @@ public class ExplosionCurse extends CurseBase {
 	public int getWeight(){
 		return 1;
 	}
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book was cursed by Artago, God of Explosions!";
-	}
 
 	
 	/**

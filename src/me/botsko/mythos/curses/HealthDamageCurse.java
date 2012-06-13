@@ -18,16 +18,6 @@ public class HealthDamageCurse extends CurseBase {
 	
 	/**
 	 * 
-	 * @return
-	 */
-	@Override
-	public String getMessage(){
-		return "Spell book was cursed! Ares demands a sacrifice of health!";
-	}
-
-	
-	/**
-	 * 
 	 * @param player
 	 */
 	@Override

@@ -8,10 +8,4 @@ public interface Artifact {
 	 */
 	public int getWeight();
 	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getAwardMessage();
-	
 }
