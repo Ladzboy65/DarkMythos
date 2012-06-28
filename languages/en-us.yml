@@ -4,9 +4,9 @@ spells:
     used: "Used spell Tree Feller! Spell book consumed."
     nearby: "{player} discovered a magical book: Demeter's Tree Feller"
   IronTouchSpell:
-    awarded: "You discovered a magical book: Hephaestus' Spell of Iron Touch"
+    awarded: "You discovered a magical book: Hades' Spell of Iron Touch"
     used: "Used spell Iron Touch! Spell book consumed."
-    nearby: "{player} discovered a magical book: Hephaestus' Spell of Iron Touch"
+    nearby: "{player} discovered a magical book: Hades' Spell of Iron Touch"
   ArmorEnchanterSpell:
     awarded: "You discovered a very rare spell: Hephaestus' spell of Armor Enchanter"
     used: "Used spell Armor enchanter! Spell book consumed."
@@ -28,9 +28,9 @@ spells:
     used: "Used spell Creature Thief! Spell book consumed."
     nearby: "{player} discovered a magical book: Artemis' Creature Thief"
   DiamondTouchSpell:
-    awarded: "You discovered a magical book: Hephaestus' Spell of Diamond Touch"
+    awarded: "You discovered a magical book: Hades' Spell of Diamond Touch"
     used: "Used spell Diamond Touch! Spell book consumed."
-    nearby: "{player} discovered a magical book: Hephaestus' Spell of Diamond Touch"
+    nearby: "{player} discovered a magical book: Hades' Spell of Diamond Touch"
   FeatherTouchSpell:
     awarded: "You discovered a magical book: Hephaestus' Spell of Feather Touch"
     used: "Used spell Feather Touch! Spell book consumed."
@@ -40,9 +40,9 @@ spells:
     used: "Used Spell full heal! Apollo grants you full health and hunger!"
     nearby: "{player} discovered a magical book: Apollo's Spell of Healing"
   GoldenTouchSpell:
-    awarded: "You discovered a magical book: Hephaestus' Spell of Golden Touch"
+    awarded: "You discovered a magical book: Hades' Spell of Golden Touch"
     used: "Used spell Golden Touch! Spell book consumed."
-    nearby: "{player} discovered a magical book: Hephaestus' Spell of Golden Touch"
+    nearby: "{player} discovered a magical book: Hades' Spell of Golden Touch"
   PickSummonerSpell:
     awarded: "You discovered a magical book: Hephaestus' Pick Summoner!"
     used: "Used spell Pick Summoner! Spell books consumed."
@@ -87,3 +87,4 @@ artifacts:
   ArtemisBowArtifact:
     awarded: "You've just discovered a Fabled Bow of Artemis!"
     nearby: "{player} just discovered a Fabled Bow of Artemis!"
+
